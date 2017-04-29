@@ -1,0 +1,144 @@
+ <!-- navbar header -->
+    
+<script type="text/ng-template" id="modalNuevaSolicitud.html">
+  <div ng-include="'tpl/modalNuevaSolicitud.html'"></div>
+</script>
+<script type="text/ng-template" id="modalConfirmEliminar.html">
+  <div ng-include="'tpl/modalConfirmEliminar.html'"></div>
+</script>
+<div class="hbox hbox-auto-xs hbox-auto-sm" ng-init="
+    app.settings.asideFolded = true; 
+    app.settings.asideDock = false;
+  ">
+  <div class="">
+    <div class="bg-light lter b-b wrapper-md" ng-controller="FlotChartDemoCtrl">
+     
+      <div class="row">
+        <div class="col-sm-6 col-xs-12">
+          <h1 class="m-n font-thin h3 text-black">Solicitudes</h1>
+          <small class="text-muted">Listado</small>
+        </div>
+        <div class="col-sm-6 text-right hidden-xs">         
+        </div>
+      </div>
+    </div>
+
+  </div>
+ 
+</div>
+<div class="wrapper-md"  ng-controller="listadoSolicitudesCtrl" ng-init="getSolicitudes()" style="overflow-x:hidden;"
+>
+
+
+   <!--  <div class="row col-md-10">
+
+   <div class="col-sm-3">
+           <div class="pull-right ">
+             <span class="glyphicon glyphicon-filter" popover="Filtrar por rangos de fechas" popover-trigger="mouseenter" popover-placement="bottom"></span>Filtrar:
+             </div>
+           </div>
+          <div class="col-sm-4">
+            <p class="input-group">
+              <input type="text" class="form-control" datepicker-popup="dd/MM/yyyy" ng-model="fechaInicio" is-open="opened" max-date="minDate" ng-change="getSolicitudes2()" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true"  />
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+              </span>
+            </p> 
+          </div> 
+          <div class="col-sm-4">
+           <p class="input-group">
+              <input type="text" class="form-control" datepicker-popup="dd/MM/yyyy" ng-model="fechaFin" is-open="opened2" min-date="fechaInicio" ng-change="getSolicitudes2()" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true"  />
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="open2($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+              </span>
+            </p> 
+        
+          </div>
+        </div>  -->
+<!-- <div class="container col-lg-12"   > -->
+<div class="col-lg-12"   >
+    <div class="col-lg-12">
+     <button class="btn m-b-xs w-xs btn-primary btn-rounded pull-right" tooltip="Agregar solicitud" tooltip-placement="left" ng-click="agregarSolicitud()" ><i class="fa fa-plus text"></i>
+          <span class="text" > Solicitud</span></button>
+          </div>
+ <div class="row" >
+    <div class="">
+      <tabset class="tab-container">
+        <tab heading="Solicitudes pendientes">  
+          <div class="panel panel-default">
+            <div class="table-responsive">
+              <table ui-jq="dataTable" id="dataTable" dt-instance="dtInstance" ui-refresh="solicitudes2" ui-options="tbOptions3" class="table table-striped m-b-none">
+                <thead>
+                  <tr>
+                 <!--     <th  style="width:10%">#</th>  -->
+                    <th  style="width:20%">Titulo</th>
+                    <th  style="width:40%">Descripcion</th> 
+                    <th  style="width:20%">Categoría</th> 
+                    <th  style="width:10%">Estado</th> 
+                 
+                    <th  style="width:10%"></th> 
+                   
+                  </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+              </table>
+            </div> 
+          </div>
+        </tab>
+
+                 <tab>
+        <tab-heading>
+        Slicitudes en proceso
+        </tab-heading>
+          <div class="panel panel-default">
+              <div class="table-responsive">
+                <table ui-jq="dataTable" ui-refresh="solicitudesPendientes" ui-options="tbOptions3" class="table table-striped m-b-none">
+                  <thead>
+                    <tr>
+                     <th  style="width:20%">titulo</th>
+                        <th  style="width:15%">Descripcion</th> 
+                        <th  style="width:20%">Nombres Contacto</th> 
+                        <th  style="width:15%">apellidos Contacto</th> 
+                        <th  style="width:15%">accion 1</th> 
+                        <th  style="width:15%">accion 2</th> 
+                    </tr>
+                  </thead>
+                  <tbody>
+                  </tbody>
+                </table>
+              </div> 
+            </div>      
+            </tab>
+            <tab>
+        <tab-heading>
+        Slicitudes finalizadas
+        </tab-heading>
+          <div class="panel panel-default">
+              <div class="table-responsive">
+                <table ui-jq="dataTable" ui-refresh="solicitudesFinalizadas" ui-options="tbOptions3" class="table table-striped m-b-none">
+                  <thead>
+                    <tr>
+                     <th  style="width:20%">titulo</th>
+                        <th  style="width:15%">Descripcion</th> 
+                        <th  style="width:20%">Nombres Contacto</th> 
+                        <th  style="width:15%">apellidos Contacto</th> 
+                        <th  style="width:15%">accion 1</th> 
+                        <th  style="width:15%">accion 2</th> 
+                    </tr>
+                  </thead>
+                  <tbody>
+                  </tbody>
+                </table>
+              </div> 
+            </div>      
+            </tab>
+        
+      </tabset>
+     
+    </div>
+  </div>
+  </div>
+
+</div>

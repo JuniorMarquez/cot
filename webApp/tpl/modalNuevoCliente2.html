@@ -1,0 +1,73 @@
+<div class="modal-header">
+    <h3 class="modal-title">Agregar nuevo cliente</h3>
+</div>
+
+<div class="panel-body">
+  <form class="bs-example form-horizontal">
+    <div class="form-group col-sm-12" >
+ <div ng-controller="AccordionDemoCtrl">
+ <accordion close-others="oneAtATime">
+          <accordion-group heading="Datos de la empresa"  is-open="status.isFirstOpen" is-disabled="status.isFirstDisabled">
+        <div class="col-sm-12">
+         <input type="nombreRazon" class="form-control" ng-model="item.nombreRazon"placeholder="Nombre / Razon social">
+      </div>
+
+       <div class="col-sm-6">
+       <p></p>
+          <input type="text" class="form-control" ng-model="item.numeroIdentificacionFiscal" placeholder="Numero de identificacion fiscal">
+        </div>
+    
+      <div class="col-sm-12">
+      <p></p>
+           <textarea class="form-control" rows="3" name="direccion"   ng-model="item.direccion"placeholder="Direccion" required="true"></textarea>
+      </div>
+   
+        <div class="col-sm-4">
+        <p></p>
+          <input type="text" class="form-control" placeholder="Telefono" ng-model="item.telefono">
+        </div>
+          </accordion-group>
+           <accordion-group heading="Datos de la persona de contacto"  >
+           <p></p><div class="col-sm-6">
+          <input type="text" class="form-control" ng-model="item.nombresC" placeholder="Nombres">
+        </div>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" ng-model="item.apellidosC" placeholder="Apellidos">
+        </div>
+        <div class="col-sm-6">
+        <p></p>
+          <input type="text" class="form-control" ng-model="item.identificacionC" placeholder="Identificacion">
+        </div>
+        <div class="col-sm-4">
+        <p></p>
+          <input type="text" class="form-control" ng-model="item.telefonoC" placeholder="Telefono">
+        </div>
+           <div class="col-sm-10" >
+           <p></p>
+        <textarea class="form-control" rows="1"   ng-model="item.direccionC"placeholder="Direccion" required="true"></textarea>
+      </div>
+      <div class="col-sm-6">
+      <p></p>
+          <input type="text" class="form-control" ng-model="item.email" placeholder="Email">
+        </div>
+        <div class="col-sm-4">
+        <p></p>
+          <input type="text" class="form-control" ng-model="item.password" placeholder="Contraseña">
+        </div>
+          </accordion-group>          
+   
+        </accordion>
+</div>
+      <!--   <label>Nombre / Razon social</label> -->
+      
+      
+    </div>
+      </div>
+    </div>  
+  </form>
+</div>
+<div class="modal-footer">                  
+  <button class="btn btn-default" ng-click="cancel()">Cancelar</button>
+  <button class="btn btn-primary" ng-click="okNuevoCliente(item)">OK</button>
+</div>
+

@@ -1,0 +1,40 @@
+<div class="modal-header">
+    <h3 class="modal-title">Agregar Solicitud de soporte</h3>
+</div>
+
+<div class="panel-body">
+  <form class="bs-example form-horizontal">
+    <div class="form-group col-sm-12" >
+
+      <div class="col-sm-12">
+         <input type="text" class="form-control" ng-model="item.titulo"placeholder="Titulo">
+      </div>
+      <div class="col-sm-12">
+      <p></p>
+           <textarea class="form-control" rows="6" name="descripcion"   ng-model="item.descripcion"placeholder="Descripcion" required="true"></textarea>
+      </div>
+
+       <div class="col-sm-12">
+           <!--  <i class="icon-users"></i> --> <!-- Categoría --><p></p>
+                      <ui-select ng-model="item.categoria" theme="bootstrap" >
+                        <ui-select-match placeholder="Categoría...">{{$select.selected.nombre}}</ui-select-match>
+                        <ui-select-choices group-by="'nombre'" repeat="item.nombre as item in categorias | filter: $select.search">
+                          <span ng-bind-html="item.nombre | highlight: $select.search"></span>
+                          <!-- <small ng-bind-html="item.email | highlight: $select.search"></small> -->
+                        </ui-select-choices>
+                      </ui-select>
+
+
+          </div>  
+
+
+    </div>
+      
+    
+  </form>
+</div>
+<div class="modal-footer">                  
+  <button class="btn btn-default" ng-click="cancel()">Cancelar</button>
+  <button class="btn btn-primary" ng-click="okNuevaSolicitud(item)">OK</button>
+</div>
+

@@ -1,0 +1,130 @@
+ <!-- navbar header -->
+      <script type="text/ng-template" id="modalDepartamento.html">
+            <div ng-include="'tpl/modalDepartamento.html'"></div>
+          </script>
+<div class="hbox hbox-auto-xs hbox-auto-sm" ng-init="
+    app.settings.asideFolded = false; 
+    app.settings.asideDock = false;
+  ">
+  <!-- main -->
+  <div class="col">
+    <!-- main header -->
+    <div class="bg-light lter b-b wrapper-md" ng-controller="FlotChartDemoCtrl">
+      <div class="row">
+        <div class="col-sm-6 col-xs-12">
+          <h1 class="m-n font-thin h3 text-black">Panel de Control</h1>
+          <small class="text-muted">Bienvenido al panel de control del Cliente</small>
+        </div>
+      </div>
+    </div>
+    <!-- / main header -->
+    <div class="wrapper-md" ng-controller="FlotChartDemoCtrl">
+      <!-- stats -->
+      <div class="row">
+        <div class="col-md-5">
+         <tabset class="tab-container" ng-init="steps={percent:20, step1:true, step2:false, step3:false}">
+            <tab heading="1" active="steps.step1" select="steps.percent=10">
+              <progressbar value="steps.percent" class="progress-xs" type="success">
+              </progressbar>
+              <form name="step1" class="form-validation">
+                
+                <div>
+                  <div class="col-md-10">
+                    <input type="text" name="primerNombre" class="form-control" ng-model="primerNombre" required ng-change="step1.email.$valid ? (steps.percent=30) : (steps.percent=20)" placeholder="Primer nombre">
+                  </div>
+                  <div class="col-md-10">
+                    <input type="text" name="segundoNombre" class="form-control" ng-model="segundoNombre" required placeholder="Segundo nombre" >
+                  </div>
+                  <div class="col-md-10">
+                    <p>Fecha de nacimiento:</p>
+                    <p class="input-group" ng-controller="DatepickerDemoCtrl">
+                      <input type="text" class="form-control" datepicker-popup="dd/MM/yyyy" ng-model="dt" is-open="opened" min-date="minDate"  datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+                      <span class="input-group-btn">
+                      <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                      </span>
+                    </p>
+                  </div>
+                </div>
+                <div class="m-t m-b">
+                  <button type="submit" ng-disabled="step1.$invalid" class="btn btn-default btn-rounded" ng-click="steps.step2=true">Siguiente
+                  </button>
+                </div>
+              </form>
+            </tab>
+            
+            <tab heading="2" disabled="step1.$invalid" active="steps.step2" select="steps.percent=30">
+              <form name="step2" class="form-validation">
+                <p class="m-b">Continue the next step</p>
+                <progressbar value="steps.percent" class="progress-xs" type="success">
+                </progressbar>
+                <p>Your age:</p>
+                <input type="number" name="age" class="form-control" ng-model="age" required>
+                <div class="m-t m-b">
+                  <button type="button" class="btn btn-default btn-rounded" ng-click="steps.step1=true">Anterior</button>
+                  <button type="submit" ng-disabled="step2.$invalid" class="btn btn-default btn-rounded" ng-click="steps.step3=true">Siguiente</button>
+                </div>
+              </form>
+            </tab>
+    
+            <tab heading="3" disabled="step2.$invalid" active="steps.step3" select="steps.percent=60">
+              <p class="m-b">Congraduations! You got the last step.</p>
+              <progressbar value="steps.percent" class="progress-xs" type="success"></progressbar>
+              <p>Just one click to finish it.</p>
+              <div class="m-t m-b">
+                <button type="button" class="btn btn-default btn-rounded" ng-click="steps.step2=true">Anterios</button>
+                <button type="button" class="btn btn-default btn-rounded" ng-click="steps.percent=100">Finalizar</button>
+              </div>
+            </tab>
+          </tabset>
+
+          <div class="row row-sm ">
+            
+            <div class="col-xs-6">
+            </div>
+            <div class="col-xs-6">
+            </div>           
+          </div>
+        </div>
+       
+        <div class="col-md-7">
+          <div class="col-xs-12 m-b-md">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <div class="clearfix">
+                    <a href class="pull-left thumb-md avatar b-3x m-r">
+                      <img src="img/a2.jpg" alt="...">
+                    </a>
+                    <div class="clear">
+                      <div class="h3 m-t-xs m-b-xs">
+                        {{nombre}} 
+                        <i class="fa fa-circle text-success pull-right text-xs m-t-sm"></i>
+                      </div>
+                      <small class="text-muted">Persona de contacto</small>
+                    </div>
+                  </div>
+                </div>
+                <div class="list-group no-radius alt">
+                  <a class="list-group-item" href>
+                    <span class="badge bg-success">25</span>
+                    <i class="fa fa-comment fa-fw text-muted"></i> 
+                    Solicitudes
+                  </a>
+                  <a class="list-group-item" href>
+                    <span class="badge bg-info">16</span>
+                    <i class="fa fa-envelope fa-fw text-muted"></i> 
+                    Mensajes
+                  </a>
+                  <a class="list-group-item" href>
+                    <span class="badge bg-light">5</span>
+                    <i class="fa fa-eye fa-fw text-muted"></i> 
+                    Informacion completada
+                  </a>
+                </div>
+              </div>
+            </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

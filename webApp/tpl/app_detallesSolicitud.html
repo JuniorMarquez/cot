@@ -1,0 +1,49 @@
+
+  <style>
+        /* This helps the ng-show/ng-hide animations start at the right place. */
+        /* Since Angular has this but needs to load, this gives us the class early. */
+        .app { background-color: #f0f3f4; }
+    </style> <!--hbox layout -->
+          <script type="text/ng-template" id="modalSalidaconsultor.html">
+            <div ng-include="'tpl/modalSalidaconsultor.html'"></div>
+          </script>
+           <script type="text/ng-template" id="modalConfirm.html">
+            <div ng-include="'tpl/modalConfirm.html'"></div>
+          </script>
+              <script type="text/ng-template" id="modalConfirmBorrarConsultor.html">
+            <div ng-include="'tpl/modalConfirmBorrarConsultor.html'"></div>
+          </script>
+          <script type="text/ng-template" id="modalConfirm2.html">
+            <div ng-include="'tpl/modalConfirm2.html'"></div>
+          </script>
+           <div class="">
+   </div>
+  <div class="hbox hbox-auto-xs hbox-auto-sm bg-light " ng-init="
+  app.settings.asideFixed = true;
+  app.settings.container = false;
+  app.settings.asideFolded = true;
+  app.hideAside = false;
+  app.hideFooter = true;
+  app.settings.asideFolded = true;" 
+  ng-controller="detallesSolicitudCtrl">
+
+  <!-- column -->
+ 
+       
+      </div>
+      <!-- / accordion -->
+          
+ <div class="">
+    <div class="bg-light lter b-b wrapper-md" ng-controller="FlotChartDemoCtrl">
+     
+      <div class="row">
+        <div class="col-sm-6 col-xs-12">
+          <h1 class="m-n font-thin h3 text-black">Detalles de solicitud</h1>
+       <!--    <small class="text-muted">Listado</small> -->
+        </div>
+        <div class="col-sm-6 text-right hidden-xs">         
+        </div>
+      </div>
+    </div>
+
+  </div>

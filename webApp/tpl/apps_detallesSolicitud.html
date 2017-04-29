@@ -1,0 +1,237 @@
+
+  <style>
+        /* This helps the ng-show/ng-hide animations start at the right place. */
+        /* Since Angular has this but needs to load, this gives us the class early. */
+        .app { background-color: #f0f3f4; }
+    </style> <!--hbox layout -->
+          
+           <script type="text/ng-template" id="modalConfirm.html">
+            <div ng-include="'tpl/modalConfirm.html'"></div>
+          </script>
+             
+          <script type="text/ng-template" id="modalConfirm2.html">
+            <div ng-include="'tpl/modalConfirm2.html'"></div>
+          </script>
+           <div class="">
+   </div>
+  <div class="hbox hbox-auto-xs hbox-auto-sm bg-light " ng-init="
+  app.settings.asideFixed = true;
+  app.settings.container = false;
+  app.settings.asideFolded = true;
+  app.hideAside = false;
+  app.hideFooter = true;
+  app.settings.asideFolded = true;" 
+  ng-controller="detallesSolicitudCtrl">
+
+  <!-- column -->
+  
+  <!-- /column -->
+  <!-- column -->
+  <div class="col w-lg2 lter b-r">
+    <div class="vbox">
+      <div class="wrapper-xs b-b">
+
+ <!--        <div class="input-group m-b-xxs">
+          <span class="input-group-addon input-sm no-border no-bg"><i class="icon-magnifier text-md m-t-xxs"></i></span>
+          <input type="text" class="form-control input-sm no-border no-bg text-md" placeholder="{{especialidad.nombre ? especialidad.nombre : 'Todos'}}" ng-model="query">  
+        </div> -->
+      </div>
+      <div class="row-row">
+        <div class="cell scrollable hover">
+          <div class="cell-inner">
+                  <div class="panel panel-default">
+                   
+        <div class="panel-heading">                    
+         <i class="fa  fa-bank  text-muted"></i>
+
+
+
+           News
+        </div>
+        <div class="panel-body" ui-jq="slimScroll" ui-options="{height:'250px', size:'8px'}">
+          <!-- <div class="media">
+            <span class="pull-left thumb-sm"><img src="img/a2.jpg" alt="..."></span>
+            <div class="media-body">
+              <div class="pull-right text-center text-muted">
+                <strong class="h4">12:18</strong><br>
+                <small class="label bg-light">pm</small>
+              </div>
+              <a href class="h4">Bootstrap 3 released</a>
+              <small class="block"><a href class="">John Smith</a> <span class="label label-success">Circle</span></small>
+              <small class="block m-t-sm">Sleek, intuitive, and powerful mobile-first front-end framework for faster and easier web development.</small>
+            </div>
+          </div> -->
+          <div class="line pull-in"></div>
+          <div class="media">
+            <!-- <span class="pull-left thumb-sm"><i class="fa  fa-bank fa-3x text-muted"></i></span>  -->               
+          <!--   <div class="media-body">
+              <div class="pull-right text-center text-muted pull-right">
+                <strong class="h4">{{detallesSolicitud.fecha}}</strong><br>
+                <small class="label bg-light pull-right">{{detallesSolicitud.dia}}</small>
+              </div>
+              <a href class="h4">{{detallesSolicitud.titulo}}</a>
+              <small class="block"><a href>{{detallesSolicitud.cliente}}</a> <span class="label label-info">{{detallesSolicitud.categoria}}</span></small>
+              <small class="block m-t-sm">{{detallesSolicitud.descripcion}}</small>
+            </div> -->
+               <div class="m-b">
+               <a href class="pull-left thumb-sm avatar"><img src="img/a2.jpg" alt="...">
+               </a>
+            
+            <div class="m-l-xxl">
+              <div class="pos-rlt wrapper b b-light r r-2x">
+                <span class="arrow left pull-up"></span>
+                <p class="m-b-none">{{detallesSolicitud.descripcion}}</p>
+              </div>
+              <small class="text-muted"><i class="fa fa-ok text-success"></i> {{detallesSolicitud.fecha}}</small>
+            </div>
+          </div>
+          </div>
+          <div class="line pull-in"></div>
+          <div class="media">
+            <!-- <div class="media-body">
+              <div class="pull-right text-center text-muted">
+                <strong class="h4">09</strong><br>
+                <small class="label bg-light">jan</small>
+              </div>
+              <a href class="h4 text-success">Mobile first html/css framework</a>
+              <small class="block m-t-sm">Bootstrap, Ratchet</small>
+            </div> -->
+          </div>
+        </div>
+      </div>
+           
+            
+          </div>
+        </div>
+      </div>
+      <div class="wrapper b-t text-center" >
+       
+      </div>
+    </div>
+  </div>
+  <!-- /column -->
+
+  <!-- column -->
+  <div class="col">
+    <div class="vbox">
+      <div class="wrapper-sm b-b">
+       <toaster-container toaster-options="{'position-class': 'toast-top-right', 'close-button':true}"></toaster-container>
+      <div class="m-t-n-xxs m-b-n-xxs m-l-xs">
+           <a class="btn btn-default" ui-toggle-class="timeline-center" target=".timeline">
+          <span class="text">
+            <i class="fa fa-arrows-h text-success"></i> 
+          </span>
+          <span class="text-active">
+            <i class="fa  fa-long-arrow-left text-info"></i> 
+          </span>
+        </a>
+        </div>
+      </div>
+      <div class="row-row">
+        <div class="cell">
+          <div class="cell-inner">
+            <div class="wrapper-md">
+              <div class="hbox h-auto m-b-lg">
+               
+<ul class="timeline">
+        <li class="tl-header">
+          <div class="btn btn-info">Now</div>
+        </li>
+        <li class="tl-item tl-right">
+          <div class="tl-wrap b-primary">
+            <span class="tl-date">04.2014</span>
+            <div class="tl-content panel padder b-a block">
+              <span class="arrow left pull-up hidden-left"></span>
+              <span class="arrow right pull-up visible-left"></span>
+              <div class="text-lt m-b-sm">
+              <a href class="avatar thumb-xs m-r-xs">
+                    <img src="img/avatar.png" alt="...">
+                    <i class="on b-white left"></i>
+                  </a>
+              Block</div>
+              <div class="panel-body pull-in b-t b-light">
+                <p>I'm working on a realy amazing application, It will be available soon. here is a little tease. </p>
+                <div class="m-b m-t">                  
+              
+                  <span class="h5 m-l-sm">Liked</span>              
+                </div>
+              
+              </div>             
+            </div>
+          </div>
+        </li>
+
+
+        <li class="tl-item tl-left">
+          <div class="tl-wrap b-primary">
+            <span class="tl-date">04.2014</span>
+            <div class="tl-content panel padder b-a block">
+              <span class="arrow left pull-up hidden-left"></span>
+              <span class="arrow right pull-up visible-left"></span>
+              <div class="text-lt m-b-sm">
+              <a href class="avatar thumb-xs m-r-xs">
+                    <img src="img/a7.jpg" alt="...">
+                    <i class="on b-white left"></i>
+                  </a>
+
+              Block</div>
+              <div class="panel-body pull-in b-t b-light">
+                <p>I'm working on a realy amazing application, It will be available soon. here is a little tease. </p>
+                <div class="m-b m-t">                  
+              
+                  <span class="h5 m-l-sm">Liked</span>              
+                </div>
+            
+              </div>             
+            </div>
+          </div>
+        </li>
+        <li class="tl-item tl-right">
+          <div class="tl-wrap b-primary">
+            <span class="tl-date">04.2014</span>
+            <div class="tl-content panel padder b-a block">
+              <span class="arrow left pull-up hidden-left"></span>
+              <span class="arrow right pull-up visible-left"></span>
+              <div class="text-lt m-b-sm">
+              <a href class="avatar thumb-xs m-r-xs">
+                    <img src="img/avatar.png" alt="...">
+                    <i class="on b-white left"></i>
+                  </a>
+              Block</div>
+              <div class="panel-body pull-in b-t b-light">
+                <p>I'm working on a realy amazing application, It will be available soon. here is a little tease. </p>
+                <div class="m-b m-t">                  
+              
+                  <span class="h5 m-l-sm">Liked</span>              
+                </div>
+              
+              </div>             
+            </div>
+          </div>
+        </li>
+
+
+       <!--  -->
+        <li class="tl-header">
+          <div class="btn btn-sm btn-default btn-rounded">more</div>
+        </li>
+      </ul>
+              
+                
+                
+              </div>
+             
+ <!-- accordion -->      
+     
+      </div>
+      <!-- / accordion -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /column -->
+</div>
+
+<!-- /hbox layout

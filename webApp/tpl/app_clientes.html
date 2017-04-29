@@ -1,0 +1,122 @@
+ <!-- navbar header -->
+    
+<script type="text/ng-template" id="modalNuevoCliente.html">
+  <div ng-include="'tpl/modalNuevoCliente.html'"></div>
+</script>
+<script type="text/ng-template" id="modalBorrar.html">
+  <div ng-include="'tpl/modalBorrar.html'"></div>
+</script>
+<div class="hbox hbox-auto-xs hbox-auto-sm" ng-init="
+    app.settings.asideFolded = true; 
+    app.settings.asideDock = false;
+  ">
+  <div class="">
+    <div class="bg-light lter b-b wrapper-md" ng-controller="FlotChartDemoCtrl">
+     
+      <div class="row">
+        <div class="col-sm-6 col-xs-12">
+          <h1 class="m-n font-thin h3 text-black">Clientes</h1>
+          <small class="text-muted">Listado</small>
+        </div>
+        <div class="col-sm-6 text-right hidden-xs">         
+        </div>
+      </div>
+    </div>
+
+  </div>
+ 
+</div>
+<div class="wrapper-md"  ng-controller="clientesCtrl" ng-init="getClientes()" style = "overflow-x:hidden;"
+>
+
+
+   <!--  <div class="row col-md-10">
+
+   <div class="col-sm-3">
+           <div class="pull-right ">
+             <span class="glyphicon glyphicon-filter" popover="Filtrar por rangos de fechas" popover-trigger="mouseenter" popover-placement="bottom"></span>Filtrar:
+             </div>
+           </div>
+          <div class="col-sm-4">
+            <p class="input-group">
+              <input type="text" class="form-control" datepicker-popup="dd/MM/yyyy" ng-model="fechaInicio" is-open="opened" max-date="minDate" ng-change="getClientes2()" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true"  />
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+              </span>
+            </p> 
+          </div> 
+          <div class="col-sm-4">
+           <p class="input-group">
+              <input type="text" class="form-control" datepicker-popup="dd/MM/yyyy" ng-model="fechaFin" is-open="opened2" min-date="fechaInicio" ng-change="getClientes2()" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true"  />
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="open2($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+              </span>
+            </p> 
+        
+          </div>
+        </div>  -->
+
+<!-- <div class="container col-lg-12"   > -->
+<div class="col-lg-12"   >
+    <div class="col-lg-12">
+     <toaster-container toaster-options="{'position-class': 'toast-top-right', 'close-button':true}"></toaster-container>
+     <button class="btn m-b-xs w-xs btn-primary btn-rounded pull-right" tooltip="Agregar cliente" tooltip-placement="left" ng-click="agregarCliente()" ><i class="fa fa-plus text"></i>
+          <span class="text" > Solicitudes de Registro</span></button>
+          </div>
+ <div class="row" >
+    <div class="">
+      <tabset class="tab-container">
+        <tab>
+        <tab-heading>
+        Solicitudes de Registro
+        </tab-heading>
+          <div class="panel panel-default">
+              <div class="table-responsive">
+                <table ui-jq="dataTable" ui-refresh="clientes3" ui-options="tbOptions3" class="table table-striped m-b-none">
+                  <thead>
+                    <tr>
+                     
+                  
+                    <th  style="width:50%">Email</th> 
+                  
+                    <th  style="width:25%"></th> 
+                    <th  style="width:25%"></th> 
+                    </tr>
+                  </thead>
+                  <tbody>
+                  </tbody>
+                </table>
+              </div> 
+            </div>      
+            </tab>
+        <tab heading="Clientes Activos">  
+          <div class="panel panel-default">
+            <div class="table-responsive">
+              <table ui-jq="dataTable" id="dataTable" dt-instance="dtInstance" ui-refresh="clientes2" ui-options="tbOptions" class="table table-striped m-b-none">
+                <thead>
+                  <tr>
+                    <th  style="width:30%">Nombre / Razon Social</th>
+                    <th  style="width:25%">Numero Id Fiscal</th> 
+                    <th  style="width:25%">Persona de contacto</th> 
+                  
+                    <th  style="width:10%"></th> 
+                    <th  style="width:10%"></th> 
+                  </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+              </table>
+            </div> 
+          </div>
+        </tab>
+
+               
+        
+      </tabset>
+     
+    </div>
+  </div>
+  </div>
+
+</div>

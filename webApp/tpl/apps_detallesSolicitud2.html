@@ -1,0 +1,181 @@
+
+  <style>
+        /* This helps the ng-show/ng-hide animations start at the right place. */
+        /* Since Angular has this but needs to load, this gives us the class early. */
+        .app { background-color: #f0f3f4; }
+    </style> <!--hbox layout -->
+          <script type="text/ng-template" id="modalSalidaconsultor.html">
+            <div ng-include="'tpl/modalSalidaconsultor.html'"></div>
+          </script>
+           <script type="text/ng-template" id="modalConfirm.html">
+            <div ng-include="'tpl/modalConfirm.html'"></div>
+          </script>
+              <script type="text/ng-template" id="modalConfirmBorrarConsultor.html">
+            <div ng-include="'tpl/modalConfirmBorrarConsultor.html'"></div>
+          </script>
+          <script type="text/ng-template" id="modalConfirm2.html">
+            <div ng-include="'tpl/modalConfirm2.html'"></div>
+          </script>
+           <div class="">
+   </div>
+  <div class="hbox hbox-auto-xs hbox-auto-sm bg-light " ng-init="
+  app.settings.asideFixed = true;
+  app.settings.container = false;
+  app.settings.asideFolded = true;
+  app.hideAside = false;
+  app.hideFooter = true;
+  app.settings.asideFolded = true;" 
+  ng-controller="detallesSolicitudCtrl">
+
+  <!-- column -->
+  <div class="col w b-r">
+    <div class="vbox">
+      <div class="row-row">
+        <div class="cell scrollable hover">
+           <a class="btn btn-default" ui-toggle-class="timeline-center" target=".timeline">
+          <span class="text">
+            <i class="fa fa-arrows-h text-success"></i> 
+          </span>
+          <span class="text-active">
+            <i class="fa  fa-long-arrow-left text-info"></i> 
+          </span>
+        </a>
+        </div>
+      </div>
+     
+    </div>
+  </div>
+  <!-- /column -->
+  <!-- column -->
+  <div class="col w-lg2 lter b-r">
+    <div class="vbox">
+      <ul class="timeline">
+        <li class="tl-header">
+          <div class="btn btn-info">Now</div>
+        </li>
+        <li class="tl-item tl-right">
+          <div class="tl-wrap b-primary">
+            <span class="tl-date">04.2014</span>
+            <div class="tl-content panel padder b-a block">
+              <span class="arrow left pull-up hidden-left"></span>
+              <span class="arrow right pull-up visible-left"></span>
+              <div class="text-lt m-b-sm">
+              <a href class="avatar thumb-xs m-r-xs">
+                    <img src="img/avatar.png" alt="...">
+                    <i class="on b-white left"></i>
+                  </a>
+              Block</div>
+              <div class="panel-body pull-in b-t b-light">
+                <p>I'm working on a realy amazing application, It will be available soon. here is a little tease. </p>
+                <div class="m-b m-t">                  
+              
+                  <span class="h5 m-l-sm">Liked</span>              
+                </div>
+              
+              </div>             
+            </div>
+          </div>
+        </li>
+
+
+        <li class="tl-item tl-left">
+          <div class="tl-wrap b-primary">
+            <span class="tl-date">04.2014</span>
+            <div class="tl-content panel padder b-a block">
+              <span class="arrow left pull-up hidden-left"></span>
+              <span class="arrow right pull-up visible-left"></span>
+              <div class="text-lt m-b-sm">
+              <a href class="avatar thumb-xs m-r-xs">
+                    <img src="img/a7.jpg" alt="...">
+                    <i class="on b-white left"></i>
+                  </a>
+
+              Block</div>
+              <div class="panel-body pull-in b-t b-light">
+                <p>I'm working on a realy amazing application, It will be available soon. here is a little tease. </p>
+                <div class="m-b m-t">                  
+              
+                  <span class="h5 m-l-sm">Liked</span>              
+                </div>
+            
+              </div>             
+            </div>
+          </div>
+        </li>
+        <li class="tl-item tl-right">
+          <div class="tl-wrap b-primary">
+            <span class="tl-date">04.2014</span>
+            <div class="tl-content panel padder b-a block">
+              <span class="arrow left pull-up hidden-left"></span>
+              <span class="arrow right pull-up visible-left"></span>
+              <div class="text-lt m-b-sm">
+              <a href class="avatar thumb-xs m-r-xs">
+                    <img src="img/avatar.png" alt="...">
+                    <i class="on b-white left"></i>
+                  </a>
+              Block</div>
+              <div class="panel-body pull-in b-t b-light">
+                <p>I'm working on a realy amazing application, It will be available soon. here is a little tease. </p>
+                <div class="m-b m-t">                  
+              
+                  <span class="h5 m-l-sm">Liked</span>              
+                </div>
+              
+              </div>             
+            </div>
+          </div>
+        </li>
+
+
+       <!--  -->
+        <li class="tl-header">
+          <div class="btn btn-sm btn-default btn-rounded">more</div>
+        </li>
+      </ul>
+
+
+      <!-- <div class="wrapper-xs b-b">
+        <div class="input-group m-b-xxs">
+          <span class="input-group-addon input-sm no-border no-bg"><i class="icon-magnifier text-md m-t-xxs"></i></span>
+          <input type="text" class="form-control input-sm no-border no-bg text-md" placeholder="{{especialidad.nombre ? especialidad.nombre : 'Todos'}}" ng-model="query">  
+        </div>
+      </div>
+      <div class="row-row">
+        <div class="cell scrollable hover">
+          <div class="cell-inner">
+            <div class="m-t-n-xxs">
+              <div class="list-group list-group-lg no-radius no-border no-bg m-b-none">
+                <a ng-repeat="item in items | filter:{especialidad:filter} | filter:query | orderBy:'nombre'" class="list-group-item m-l" ng-class="{'select m-l-none': item.selected }" ng-click="selectItem(item)">
+                  <span class="block text-ellipsis m-l-n text-md" ng-class="{'m-l-none': item.selected }" popover="{{item.identificacion}}" popover-trigger="mouseenter" popover-placement="bottom">
+                    {{ item.nombres }} <strong>{{ item.apellidos }}</strong>
+                    <span ng-hide="item.nombres || item.aprellidos">sin nombre</span>
+                  </span>
+                </a>
+              </div>
+            </div>
+            <div class="text-center pos-abt w-full" style="top:50%;" ng-hide="(items | filter:{especialidad:filter} | filter:query).length">Vacío</div>
+          </div>
+        </div>
+      </div>
+      <div class="wrapper b-t text-center" >
+        <a tooltip="Agregar consultor" href class="btn btn-xs btn-default btn-addon" ng-click="createItem()" ng-show="items"><i class="fa fa-plus fa-fw m-r-xs"></i> Consultor</a>
+      </div> -->
+
+
+
+
+
+    </div>
+  </div>
+  <!-- /column -->
+
+  <!-- column -->
+ <!--  <div class="col w-lg2 lter b-r">
+    <div class="vbox">
+
+    </div>
+  </div>
+ -->  <!-- /column -->
+</div>
+
+<!-- /hbox layout

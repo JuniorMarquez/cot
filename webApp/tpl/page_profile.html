@@ -1,0 +1,58 @@
+
+
+<div class="wrapper-md">
+<h1 class="m-n font-thin h3">Ajustes</h1>
+<div class="" ng-controller="SigninFormController" ng-init="
+  app.settings.asideFixed = true;
+
+  app.settings.container = false;
+  app.settings.asideFolded = true;
+  app.hideAside = false;
+  app.hideFooter = true;
+
+    app.settings.asideFolded = true; ">
+
+  <!-- <a href class="btn btn-sm btn-info pull-right" onClick="window.print();">Print</a> -->
+  <toaster-container toaster-options="{'position-class': 'toast-top-right', 'close-button':true}"></toaster-container>
+
+  <div class="col">
+    <div class="row m-t ">
+      <div class="col-sm-7">
+           <a href class="thumb-lg pull-left m-r">
+              <img src="img/User_Circle2.png" class="img-circle">
+            </a>
+           <!--  <a href class="thumb-lg pull-left m-r panel3">
+              <img src="img/User_Circle.png" >
+
+            </a> -->
+             <div class="m-b m-t-sm">
+              <span class="h2 text-light">Administrador </span>
+              <p></p>
+                <span class="h3 text-light">{{app.nombre}}</span>
+             <!--  <small class="m-l">{{app.nombre}}</small> -->
+            </div>
+            <!-- <a class="btn btn-xs btn-info" ng-hide="item.editing" ng-click="editItem(item)">Editar datos de cuenta</a>
+            <a class="btn btn-xs btn-success" ng-show="item.editing" ng-click="doneEditingDatos(item)">Guardar cambios</a> 
+ -->
+              <button class="btn btn-rounded btn btn-icon btn-default" ng-hide="item.editing" ng-click="editItem(item)"><i class="fa fa-edit"></i></button>  
+               <button class="btn btn-rounded btn btn-icon btn-success" ng-show="item.editing" ng-click="doneEditingDatos(item)"><i class="fa fa-save"></i></button>         
+      </div>
+    </div>
+  </div>
+   <div class="clear m-b">
+      <span class=" text-light h5 " >Sr(a): </span>  
+      <span class=" text-light h4 " >{{item.nombre}} {{item.apellido}}</span>
+        <div class="h1">
+          <input type="text" placeholder="Nombres" class="form-control w-auto input-sm m-b-n-xxs " ng-model="item.nombre" ng-show="item.editing">
+          <input type="text" placeholder="Apellidos" class="form-control w-auto input-sm m-b-n-xxs " ng-model="item.apellido" ng-show="item.editing">
+          <span class=" text-light h5 " >E-mail: </span>
+          <span class=" text-light h4 " >{{item.email}}</span>
+       
+          <p></p>
+           <span class=" text-light h5 " ng-show="item.editing">Contraseña: </span>
+           <input type="text" ng-show="item.editing" placeholder="Contraseña" class="form-control w-auto input-sm" ng-model="item.password" > 
+        </div>      
+    </div>
+</div>
+</div>
+</div>

@@ -1,0 +1,59 @@
+  <script type="text/ng-template" id="modalConsultaOdontologo.html">
+  <div ng-include="'tpl/modalConsultaOdontologo.html'"></div>
+</script>
+  <style>
+     
+        .app {  background-color: #f6f6f6;}
+    </style>
+    <div class="bloque">
+    <div class="container entrada col-md-18 w-xxl w-auto-xs" ng-controller="Search1FormController" ng-init="app.settings.container = false;">
+    <img src="img/logofB.png">
+      <a href class="navbar-brand block m-t"> </a>
+      <div class="m-b-lg ">
+        <div class="wrapper inicio text-center">
+    </div>
+    <div class="inicio2 text-center">Consultar Odontólogo por... </div>
+
+        <form name="form" class="form-validation ">
+          <div class="form-group ">
+          <!-- <label class="col-sm-2 control-label">Tipo de cuenta ?</label> -->
+          <div class="col-sm-10">
+          <div class="checkbox">
+             <label class="i-checks i-checks-lg">
+                <input type="radio" name="a"  ng-click="a()">
+                <i></i>
+                Nombre
+              </label>
+          </div>
+              <div class="checkbox">
+             <label class="i-checks i-checks-lg">
+                <input type="radio" name="a"  ng-click="b()">
+                <i></i>
+                Municipio 
+              </label>
+
+          </div>
+           <div class="checkbox">
+             <label class="i-checks i-checks-lg">
+                <input type="radio" name="a"  ng-click="c()">
+                <i></i>
+                COT
+              </label>
+              
+          </div>
+           <div class="checkbox">
+             <label class="i-checks i-checks-lg">
+                <input type="radio" name="a"  ng-click="d()">
+                <i></i>
+                COV
+              </label>
+              
+          </div>
+        
+      
+          </div>
+        </div>          
+        </form>
+      </div>
+      <div class="text-center" ng-include="'tpl/blocks/page_footer.html'"></div>
+    </div></div>
