@@ -29,9 +29,9 @@ var mapOptions = {
   
   var contentString = '<div style="max-width: 300px" id="content">'+
       '<div id="bodyContent">'+
-	  '<h5 class="color-primary"><strong>CompuDent</strong></h5>' +
-      '<p style="font-size: 12px">Lorem ipsum dolor sit amet,' +
-      'incididunt ut labore et dolore psum dolor magna aliqua.</p>'+
+	  '<h5 class="color-primary"><strong>Colegio de Odontólogos del Táchira</strong></h5>' +
+      '<p style="font-size: 12px">' +
+      'Av España, Centro Comercial los Naranjos, Local 15</p>'+
       '</div>'+
       '</div>';
 
@@ -40,7 +40,7 @@ var mapOptions = {
   });
   
   google.maps.event.addListener(marker, 'click', function() {
-    infowindow.open(map,marker);
+    infowindow.open(map,marker,contentString);
   });
 
   var styledMapOptions = {
