@@ -4,6 +4,7 @@ var myLatLng = new google.maps.LatLng(7.780685,-72.212564);
 
 var mapOptions = {
     zoom: 17,
+    considerIp: false,
     center: myLatLng,
 	disableDefaultUI: true,
 	scrollwheel: false,
