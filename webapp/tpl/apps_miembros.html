@@ -1,0 +1,117 @@
+ <!-- navbar header -->
+    
+<script type="text/ng-template" id="modalNuevoMiembro.html">
+  <div ng-include="'tpl/modalNuevoMiembro.html'"></div>
+</script>
+<script type="text/ng-template" id="modalBorrar.html">
+  <div ng-include="'tpl/modalBorrar.html'"></div>
+</script>
+<div class="hbox hbox-auto-xs hbox-auto-sm"  ng-controller="miembrosCtrl" ng-init=" 
+
+    app.settings.asideFolded = true; 
+    app.settings.asideDock = false;
+  ">
+  <div class="">
+    <div class="bg-light lter b-b wrapper-md">
+     
+      <div class="row">
+        <div class="col-sm-6 col-xs-12">
+          <h1 class="m-n font-thin h3 text-black">Miembros</h1>
+          <small class="text-muted">Listado</small>
+        </div>
+        <div class="col-sm-6 text-right hidden-xs">         
+        </div>
+      </div>
+    </div>
+
+  </div>
+ 
+</div>
+<div class="wrapper-md"  ng-controller="miembrosCtrl"  style = "overflow-x:hidden;"
+>
+
+
+<!-- <div class="container col-lg-12"   > -->
+
+<div class="col-lg-12"   >
+      <tabset class="tab-container" >
+        <tab>
+        <tab-heading>
+        Miembros por actualizar 
+        </tab-heading>
+          <div class="panel panel-default">
+              <div class="table-responsive">
+                <table ui-jq="dataTable" id="tabla1" ui-refresh="miembros" ui-options="tbOptionsPendientes"  class="table table-striped m-b-none">
+                  <thead>
+                    <tr>
+                    <th  style="width:35%">Email</th>    
+                    <th  style="width:15%">Tipo</th> 
+                     <th  style="width:20%">Fecha de registro</th> 
+                    <th  style="width:15%"></th> 
+                    <th  style="width:15%"></th> 
+                    </tr>
+                  </thead>
+        
+                </table>
+              </div> 
+            </div>      
+            </tab>
+        <tab heading="Odontologos">  
+          <div class="panel panel-default">
+            <div class="table-responsive">
+              <table ui-jq="dataTable"  id="tablaOdontologos"  ui-options="tbOptionsOdontologos" ui-refresh="miembros" class="table table-striped m-b-none">
+                <thead>
+                  <tr>
+                    <th  style="width:35%">Email</th>
+                    <th  style="width:15%">Nombres y Apellidos</th>
+                    <th  style="width:25%">Fecha de Regisro</th> 
+                    <th  style="width:25%"></th> 
+                  </tr>
+                </thead>
+              </table>
+            </div> 
+          </div>
+        </tab>
+
+        <tab heading="Clinicas / Consultorios">  
+          <div class="panel panel-default">
+            <div class="table-responsive">
+              <table ui-jq="dataTable"    ui-options="tbOptionsClinicasConsultorios" ui-refresh="miembros" class="table table-striped m-b-none">
+                <thead>
+                  <tr>
+                    <th  style="width:35%">Email</th>
+                    <th  style="width:15%">Nombres y Apellidos</th>
+                    <th  style="width:25%">Fecha de Regisro</th> 
+                    <th  style="width:25%"></th> 
+                  </tr>
+                </thead>
+              </table>
+            </div> 
+          </div>
+        </tab>
+
+        <tab heading="Asistentes">  
+          <div class="panel panel-default">
+            <div class="table-responsive">
+              <table ui-jq="dataTable"   ui-options="tbOptionsAsistentes" ui-refresh="miembros" class="table table-striped m-b-none">
+                <thead>
+                  <tr>
+                    <th  style="width:35%">Email</th>
+                    <th  style="width:15%">Nombre Registro Fiscal</th>
+                    <th  style="width:25%">Fecha de Regisro</th> 
+                    <th  style="width:25%"></th> 
+                  </tr>
+                </thead>
+              </table>
+            </div> 
+          </div>
+        </tab>
+
+      </tabset>
+     
+    
+  
+
+  </div>
+
+

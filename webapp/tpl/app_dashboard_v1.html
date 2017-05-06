@@ -1,0 +1,197 @@
+ <!-- navbar header -->
+      <script type="text/ng-template" id="modalDepartamento.html">
+            <div ng-include="'tpl/modalDepartamento.html'"></div>
+          </script>
+<div class="hbox hbox-auto-xs hbox-auto-sm" ng-init="
+    app.settings.asideFolded = false; 
+    app.settings.asideDock = false;
+  ">
+  <!-- main -->
+  <div class="col">
+
+    <div class="bg-light lter b-b wrapper-md"ng-controller="FlotChartDemoCtrl">
+      <div class="row">
+        <div class="col-sm-6 col-xs-12">
+          <h1 class="m-n font-thin h3 text-black">Panel de Control</h1>
+          <small class="text-muted">Bienvenido al panel de control</small>
+        </div>
+        <div class="col-sm-6 text-right hidden-xs">
+          <div class="inline m-r text-left">
+            <div class="m-b-xs">{{cantidadMiembros}}<span class="text-muted"> Miembros</span></div>
+           
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="wrapper-md" ng-controller="FlotChartDemoCtrl" ng-show="{{app.nivel == '1'}}">
+  
+      <div class="row">
+        <div class="col-md-5">
+          <div class="row row-sm text-center">
+          <div class="col-xs-12 m-b-md">
+             <a href ui-sref="apps.animal" popover="Click para administrar los animales" popover-trigger="mouseenter" popover-placement="bottom">
+              <div class="r bg-primary dker item hbox no-border">
+                <div class="col w-xs v-middle hidden-md">
+                  <div ng-init="data1=[60,40]" ui-jq="sparkline" ui-options="{{data1}}, {type:'pie', height:40, sliceColors:['{{app.color.warning}}','#fff']}" class="sparkline inline"></div>
+                </div>
+                <div class="col dk padder-v r-r" >
+                  <div class="text-light-dk font-thin h1"><span>{{total}} Miembros </span></div>
+                 
+                </div>
+              </div>
+             </a> 
+            </div>
+               <div class="col-xs-6">
+            <div class="panel padder-v bg-light item">
+                <a href ng-click="openListadoMachos()">
+                <div class="h1 text-light-dk  font-thin h1">{{totalPendientes}}</div>
+                <span class="text-light-dk text-xs">
+                  
+                   
+                   Miembros pendientes
+                  
+
+                </span>
+              
+              </div>
+             </a>       
+            </div>
+
+
+            <div class="col-xs-6">
+            <a href   ng-click="openListadoHembras()">
+             <div class="panel padder-v item">
+                <div class="h1 text-info font-thin h1">{{totalOdontologos}}</div>
+                <span class="text-muted text-xs">Odontologos</span>
+                <div class="top text-right w-full">
+                  <i class="fa fa-caret-down text-warning m-r-sm"></i>
+                </div>
+              </div>
+              </a>
+             
+            </div>
+            <div class="col-xs-6">
+            <a href   ng-click="openListadoHembrasJovenes()">
+              <div class="panel padder-v bg-light item">
+                <div class="h1 text-light-dk  font-thin h1">{{totalAsistentes}}</div>
+                <span class="text-light-dk text-xs">Asistentes</span>
+                <div class="top text-right w-full">
+                
+                </div>
+              </div>
+              </a>
+            </div>
+            <div class="col-xs-6">
+            <a href   ng-click="openListadoHembrasAdultas()">
+            <div class="panel padder-v item">
+                <div class="h1 text-info font-thin h1">{{totalClinicasConsultorios}}</div>
+                <span class="text-muted text-xs">Clinicas / Consultorios</span>
+                <div class="top text-right w-full">
+                  <i class="fa fa-caret-down text-warning m-r-sm"></i>
+                </div>
+              </div>
+              </a>
+              
+
+
+        
+            </div>
+            <div class="col-xs-6">
+             
+            </div>
+            <div class="col-xs-3">
+            <a href   ng-click="openListadoSecas()">
+              <div class="panel padder-v item">
+                <div class="font-thin h1">{{dato}}</div>
+                <span class="text-muted text-xs">Dato</span>
+                <div class="bottom text-left">
+                  <i class="fa fa-caret-up text-warning m-l-sm"></i>
+                </div>
+              </div>
+              </a>
+            </div>
+            <div class="col-xs-3">
+            <a href   ng-click="openListadoEnOrdeno()">
+            <div class="panel padder-v item bg-info">
+                <div class="font-thin text-white h1">{{dato}}</div>
+                <span class="text-muted text-xs">Dato</span>
+                <div class="bottom text-left">
+                  <i class="fa fa-caret-up text-warning m-l-sm"></i>
+                </div>
+              </div>
+              </a>
+
+            </div>
+            
+          </div>
+        </div>
+       
+      
+      </div>
+   
+    </div>
+  </div>
+
+  <div class="col" ng-show="{{app.nivel == '3'}}">
+    <div class="bg-light lter b-b wrapper-md" ng-controller="FlotChartDemoCtrl">
+      <div class="row">
+        <div class="col-sm-6 col-xs-12">
+          <h1 class="m-n font-thin h3 text-black">Panel de Control</h1>
+          <small class="text-muted">Bienvenido al panel de control del Cliente</small>
+        </div>
+      </div>
+    </div>
+    <!-- / main header -->
+    <div class="wrapper-md" ng-controller="FlotChartDemoCtrl">
+      <toaster-container toaster-options="{'position-class': 'toast-top-right', 'close-button':true}"></toaster-container>
+      <!-- stats -->
+      <div class="row">
+        
+       
+        <div class="col-md-5">
+          <div class="col-xs-12 m-b-md">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <div class="clearfix">
+                    <a href class="pull-left thumb-md avatar b-3x m-r">
+                      <img src="img/a2.jpg" alt="...">
+                    </a>
+                    <div class="clear">
+                      <div class="h3 m-t-xs m-b-xs">
+                        Dr(a).
+                        <i class="fa fa-circle text-success pull-right text-xs m-t-sm"></i>
+                      </div>
+                      <small class="text-muted">{{app.email}} </small>
+                    </div>
+                  </div>
+                </div>
+                <div class="list-group no-radius alt">
+                  <a class="list-group-item" href>
+                    <span class="badge bg-success">25</span>
+                    <i class="fa fa-comment fa-fw text-muted"></i> 
+                    Solicitudes
+                  </a>
+                  <a class="list-group-item" href>
+                    <span class="badge bg-info">16</span>
+                    <i class="fa fa-envelope fa-fw text-muted"></i> 
+                    Mensajes
+                  </a>
+                  <a class="list-group-item" href>
+                    <span class="badge bg-light">5</span>
+                    <i class="fa fa-eye fa-fw text-muted"></i> 
+                    Informacion completada
+                  </a>
+                </div>
+              </div>
+            </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+
+</div>

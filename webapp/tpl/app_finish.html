@@ -1,0 +1,286 @@
+ <!-- navbar header -->
+      <script type="text/ng-template" id="modalDepartamento.html">
+            <div ng-include="'tpl/modalDepartamento.html'"></div>
+          </script>
+<div class="hbox hbox-auto-xs hbox-auto-sm" ng-init="
+    app.settings.asideFolded = false; 
+    app.settings.asideDock = false;
+  ">
+  <!-- main -->
+  <div class="col" ng-show="{{app.nivel == '1'}}">
+    <div class="bg-light lter b-b wrapper-md" ng-controller="FlotChartDemoCtrl">
+      <div class="row">
+        <div class="col-sm-6 col-xs-12">
+          <h1 class="m-n font-thin h3 text-black">Panel de Control</h1>
+          <small class="text-muted">Bienvenido al panel de control del Administrador</small>
+        </div>
+      </div>
+    </div>
+    <!-- / main header -->
+    <div class="wrapper-md" ng-controller="FlotChartDemoCtrl">
+      <!-- stats -->
+      <div class="row">
+        <div class="col-md-5">
+         
+
+          <div class="row row-sm ">
+            
+            <div class="col-xs-6">
+            </div>
+            <div class="col-xs-6">
+            </div>           
+          </div>
+        </div>
+       
+        <div class="col-md-7">
+          <div class="col-xs-12 m-b-md">
+            
+            </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="col" ng-show="{{app.nivel == '3'}}">
+    <div class="bg-light lter b-b wrapper-md" ng-controller="FlotChartDemoCtrl">
+      <div class="row">
+        <div class="col-sm-6 col-xs-12">
+          <h1 class="m-n font-thin h3 text-black">Bienvenido a COTáchira</h1>
+          <small class="text-muted" ng-show="{{app.status=='pendiente'}}" >Le invitamos a continuar con el registro</small>
+        </div>
+      </div>
+    </div>
+    <!-- / main header -->
+    <div class="wrapper-md" ng-controller="FlotChartDemoCtrl">
+      <toaster-container toaster-options="{'position-class': 'toast-top-right', 'close-button':true}"></toaster-container>
+      <!-- stats -->
+      <div class="row">
+        <div class="col-md-8" ng-show="{{app.status=='pendiente'}}">
+         <tabset class="tab-container" ng-init="steps={percent:10, step1:true, step2:false, step3:false}" ng-show="{{app.letra=='a'}}">
+            <tab heading="Personal" active="steps.step1" select="steps.percent=10">
+              <progressbar value="steps.percent" class="progress-xs" type="success">
+              </progressbar>
+              <form name="step1" class="form-validation">
+              <div class="row">
+                 <div class="col-xs-6">
+                    <p>Fecha de Nac.</p>
+                      <p class="input-group" ng-controller="DatepickerDemoCtrl">
+                      <input type="text" class="form-control" datepicker-popup="dd/MM/yyyy" ng-model="item.fechaNacimiento" is-open="opened" max-date="minDate" ng-change="getClientes2()" datepicker-options="dateOptions" ng-required="true"  close-text="Ok"/>
+                      <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                      </span>
+                    </p>
+                  </div>
+                   <div class="col-xs-6 ">
+                  <p><i class="icon-users" ></i> Sexo</p>
+                    <div class="btn-group" >
+                      <label   class="btn btn-default" ng-model="item.sexo" btn-radio="'Mujer'">F</label>
+                      <label  class="btn btn-default" ng-model="item.sexo" btn-radio="'Hombre'">M</label>
+                    </div>
+                  </div>
+                  </div>
+                  <div class="row">
+               
+                  </div>
+       
+                  
+                   <div class="row">
+                     <div class="col-xs-6">
+                      <input type="text" name="primerNombre" class="form-control" ng-model="item.primerNombre" required ng-change="step1.primerNombre.$valid ? (steps.percent=20) : (steps.percent=10)" placeholder="1er nombre">
+                    </div>
+                    <div class="col-xs-6">
+                      <input type="text" name="segundoNombre" class="form-control" ng-model="item.segundoNombre" 
+                       placeholder="2do nombre" >
+                    </div>
+                  </div>
+                  <div class="row">
+                  <div class="col-xs-6">
+                    <input type="text" name="primerApellido" class="form-control" ng-model="item.primerApellido" required  ng-change="step1.primerApellido.$valid ? (steps.percent=30) : (steps.percent=10)" placeholder="1er apellido">
+                  </div>
+                  <div class="col-xs-6">
+                    <input type="text" name="segundoApellido" class="form-control" ng-model="item.segundoApellido"  placeholder="2do apellido" >
+                  </div>
+                  </div>
+                    <div class="row">
+                  <div class="col-xs-6">
+                    <input type="text" name="cedula" class="form-control" ng-model="item.cedula"  placeholder="Cedula" required 
+                     ng-change="step1.cedula.$valid ? (steps.percent=40) : (steps.percent=10)" >
+                  </div>
+
+                  <div class="col-xs-6">
+                    <ui-select ng-model="item.estadoCivil" theme="bootstrap">
+                      <ui-select-match placeholder="Estado civil...">{{$select.selected}}</ui-select-match>
+                      <ui-select-choices repeat="item in estados | filter: $select.search">
+                        <div ng-bind-html="item | highlight: $select.search"></div>
+                      </ui-select-choices>
+                    </ui-select>
+                  </div>
+                  
+                  </div>
+               
+            
+                <div class="m-t m-b">
+                  <button type="submit" ng-disabled="step1.$invalid" class="btn btn-default btn-rounded" ng-click="steps.step2=true">Siguiente
+                  </button>
+                </div>
+              </form>
+            </tab>
+            
+            <tab heading="Profesional" disabled="step1.$invalid" active="steps.step2" select="steps.percent=40">
+              <form name="step2" class="form-validation">
+           
+                <progressbar value="steps.percent" class="progress-xs" type="success">
+                </progressbar>
+                <div class="row">
+                  <div class="col-xs-7">
+                  <p>Universidad de egreso:</p>
+                      <ui-select ng-model="item.universidadEgreso" theme="bootstrap">
+                        <ui-select-match placeholder="...">{{$select.selected}}</ui-select-match>
+                        <ui-select-choices repeat="item in universidades | filter: $select.search">
+                          <div ng-bind-html="item | highlight: $select.search"></div>
+                        </ui-select-choices>
+                      </ui-select>
+                  </div>
+                      <div class="col-xs-5">
+                       <p>Ano de egreso:</p>
+                      <ui-select ng-model="item.anoDeEgreso" theme="bootstrap">
+                        <ui-select-match placeholder="...">{{$select.selected}}</ui-select-match>
+                        <ui-select-choices repeat="item in anos | filter: $select.search">
+                          <div ng-bind-html="item | highlight: $select.search"></div>
+                        </ui-select-choices>
+                      </ui-select>
+                    </div>
+                    <div class="col-xs-12">
+                      <div class="col-xs-4">
+                       Especialidad 
+                          <label  class="i-switch m-t-xs m-r"   popover-trigger="mouseenter" popover-placement="bottom">
+                          <input type="checkbox" ng-model="switchEspecialidad" ng-click="doneEditingEstado(item)">
+                          <i></i>
+                          </label>
+                         
+                        </div>
+                         <div class="col-xs-7" ng-show="switchEspecialidad">
+                  <p>Especialidad:</p>
+                      <ui-select ng-model="item.especialidad" theme="bootstrap">
+                        <ui-select-match placeholder="...">{{$select.selected}}</ui-select-match>
+                        <ui-select-choices repeat="item in especialidades | filter: $select.search">
+                          <div ng-bind-html="item | highlight: $select.search"></div>
+                        </ui-select-choices>
+                      </ui-select>
+                  </div>
+                </div>
+
+                  
+                  
+
+
+                  <div class="col-xs-4">
+                    <input type="text" name="cov" class="form-control" ng-model="item.cov"  placeholder="C.O.V" required
+                    ng-change="step2.cov.$valid ? (steps.percent=50) : (steps.percent=40)"
+                    >
+                  </div>
+                  <div class="col-xs-4">
+                    <input type="text" name="msas" class="form-control" ng-model="item.msas"  placeholder="M.S.A.S" required
+                     ng-change="step2.msas.$valid ? (steps.percent=60) : (steps.percent=40)"
+                    >
+                  </div>
+                  <div class="col-xs-4">
+                    <input type="text" name="cot" class="form-control" ng-model="item.cot"  placeholder="C.O.T" disabled="true">
+                  </div>
+                </div>
+
+                <div class="m-t m-b">
+                  <button type="button" class="btn btn-default btn-rounded" ng-click="steps.step1=true">Anterior</button>
+                  <button type="submit" ng-disabled="step2.$invalid" class="btn btn-default btn-rounded" ng-click="steps.step3=true">Siguiente</button>
+                </div>
+              </form>
+            </tab>
+    
+            <tab heading="Contacto" disabled="step2.$invalid" active="steps.step3" select="steps.percent=60">
+            <progressbar value="steps.percent" class="progress-xs" type="success">
+                </progressbar>
+                 <form name="step3" class="form-validation">
+               <div class="row">
+                  <div class="col-xs-12">
+                        <textarea rows="2" class="form-control input-sm" name="direccion"  placeholder="Direccion" ng-model="item.direccion" style="" 
+                        ng-change="step3.direccion.$valid ? (steps.percent=80) : (steps.percent=60)"
+                        > </textarea>
+                    </div>
+                     <div class="col-xs-7" >
+                <p>Municipio:</p>
+                    <ui-select ng-model="item.municipio" name="municipio" theme="bootstrap" required ng-change="step3.municipio.$valid ? (steps.percent=100) : (steps.percent=60)">
+                      <ui-select-match placeholder="...">{{$select.selected}}</ui-select-match>
+                      <ui-select-choices repeat="item in municipios | filter: $select.search">
+                        <div ng-bind-html="item | highlight: $select.search"></div>
+                      </ui-select-choices>
+                    </ui-select>
+                </div>
+               </div>
+                   
+
+                <div class="m-t m-b">
+    
+                  <button type="submit" ng-disabled="step2.$invalid" class="btn btn-default btn-rounded" ng-click="guardar(item)">Finalizar</button>
+                </div>
+                </form>
+            </tab>
+          </tabset>
+
+          <div class="row row-sm ">
+            
+            <div class="col-xs-6">
+            </div>
+            <div class="col-xs-6">
+            </div>           
+          </div>
+        </div>
+              <div class="col-md-5">
+          <div class="col-xs-12 m-b-md">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <div class="clearfix">
+                    <a href class="pull-left thumb-md avatar b-3x m-r">
+                      <img src="img/a2.jpg" alt="...">
+                    </a>
+                    <div class="clear">
+                      <div class="h3 m-t-xs m-b-xs">
+                        Dr(a).
+                        <i class="fa fa-circle text-success pull-right text-xs m-t-sm"></i>
+                      </div>
+                      <small class="text-muted">{{app.email}} </small>
+                    </div>
+                  </div>
+                </div>
+                <div class="list-group no-radius alt">
+                  <a class="list-group-item" href>
+                    <span class="badge bg-success">0</span>
+                    <i class="fa fa-comment fa-fw text-muted"></i> 
+                    Notificaciones
+                  </a>
+                  <a class="list-group-item" href>
+                    <span class="badge bg-info">0</span>
+                    <i class="fa fa-envelope fa-fw text-muted"></i> 
+                    Mensajes
+                  </a>
+                 <!--  <a class="list-group-item" href>
+                    <span class="badge bg-light">5</span>
+                    <i class="fa fa-eye fa-fw text-muted"></i> 
+                    Informacion completada
+                  </a> -->
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+
+
+
+
+
+    </div>
+  </div>
+
+
+
+</div>

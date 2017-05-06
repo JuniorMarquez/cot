@@ -1,0 +1,455 @@
+<!-- list --> 
+
+<ul class="nav" >
+  <li class="hidden-folded  padder m-t m-b-sm text-muted text-xs">
+    <span translate="aside.nav.HEADER">Menu</span>
+  </li>
+  <li ui-sref-active="active" ng-show="{{app.nivel == '1'}}">
+    <a ui-sref="app.dashboard-v1">
+
+       <i class="font-bold fa fa-dashboard icon"></i>
+      <span class="font-bold"  translate="aside.nav.DASHBOARD"
+      
+
+      >Dashboard</span>
+    </a>
+  </li>
+  <li ui-sref-active="active" ng-show="{{app.nivel == '1'}}">
+    <a ui-sref="app.miembros">
+
+       <i class="fa fa-users icon"></i>
+      <span class="font-bold"  translate="aside.nav.MIEMBROS"
+      
+
+      >Miembros</span>
+    </a>
+  </li>
+ <!--  <li ui-sref-active="active" ng-show="{{app.nivel == '1'}}">
+    <a ui-sref="apps.consultores">
+
+       <i class="fa  fa-users icon"></i>
+      <span class="font-bold"  translate="aside.nav.CONSULTORES"
+      
+
+      >Consultores</span>
+    </a>
+  </li> -->
+ 
+
+
+<!--   <li ng-class="{active:$state.includes('app.ui')}" ng-show="{{app.nivel == '1'}}">
+    <a href class="auto">
+      <span class="pull-right text-muted">
+        <i class="fa fa-fw fa-angle-right text"></i>
+        <i class="fa fa-fw fa-angle-down text-active"></i>
+      </span>
+      <i class="font-bold fa icon-layers icon"></i>
+      <span translate="aside.nav.SOLICITUDES">Solicitudes</span>
+    </a>
+    <ul class="nav nav-sub dk">
+        <li ui-sref-active="active">
+        <a ui-sref="apps.solicitudes">
+          <span translate="aside.nav.components.sol.SOLICITUDES">Solicitudes</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.listadoSolicitudes">
+          <span translate="aside.nav.components.sol.LISTADO">Listado</span>
+        </a>
+      </li>     
+    </ul>
+  </li>
+ -->
+
+
+
+  <li ng-class="{active:$state.includes('app.ui')}" ng-show="{{app.nivel == '2'}}">
+    <a href class="auto">
+      <span class="pull-right text-muted">
+        <i class="fa fa-fw fa-angle-right text"></i>
+        <i class="fa fa-fw fa-angle-down text-active"></i>
+      </span>
+      <i class="font-bold fa icon-layers icon"></i>
+      <span translate="aside.nav.SOLICITUDESa">Solicitudes</span>
+    </a>
+    <ul class="nav nav-sub dk">
+        <li ui-sref-active="active">
+        <a ui-sref="app.nueva">
+          <span translate="aside.nav.components.sol.NUEVA">Nueva Solicitud</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="apps.todas">
+          <span translate="aside.nav.components.sol.TODAS">Todas</span>
+        </a>
+      </li>     
+    </ul>
+  </li>
+
+
+  <!-- <li ng-class="{active:$state.includes('app.ui')}">
+    <a href class="auto">
+      <span class="pull-right text-muted">
+        <i class="fa fa-fw fa-angle-right text"></i>
+        <i class="fa fa-fw fa-angle-down text-active"></i>
+      </span>
+      <i class="glyphicon glyphicon-briefcase icon"></i>
+      <span translate="aside.nav.components.ui_kits.UI_KITS">UI Kits</span>
+    </a>
+    <ul class="nav nav-sub dk">
+      <li class="nav-sub-header">
+        <a href>
+          <span translate="aside.nav.components.ui_kits.UI_KITS">UI Kits</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.ui.buttons">
+          <span translate="aside.nav.components.ui_kits.BUTTONS">Buttons</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.ui.icons">
+          <b class="badge bg-info pull-right">3</b>
+          <span translate="aside.nav.components.ui_kits.ICONS">Icons</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.ui.grid">
+          <span translate="aside.nav.components.ui_kits.GRID">Grid</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.ui.widgets">
+          <b class="badge bg-success pull-right">13</b>
+          <span translate="aside.nav.WIDGETS">Widgets</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.ui.bootstrap">
+          <b class="badge bg-primary pull-right">16</b>
+          <span translate="aside.nav.components.ui_kits.BOOTSTRAP">Bootstrap</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.ui.sortable">
+          <span translate="aside.nav.components.ui_kits.SORTABLE">Sortable</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.ui.portlet">
+          <span translate="aside.nav.components.ui_kits.PORTLET">Portlet</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.ui.timeline">
+          <span translate="aside.nav.components.ui_kits.TIMELINE">Timeline</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.ui.tree">
+          <span>Tree</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.ui.toaster">
+          <span>Toaster</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.ui.jvectormap">
+          <span translate="aside.nav.components.ui_kits.VECTOR_MAP">Vector Map</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.ui.googlemap">
+          <span>Google Map</span>
+        </a>
+      </li>
+    </ul>
+  </li> -->
+
+ <!--  <li ng-class="{active:$state.includes('app.form')}">
+    <a href class="auto">
+      <span class="pull-right text-muted">
+        <i class="fa fa-fw fa-angle-right text"></i>
+        <i class="fa fa-fw fa-angle-down text-active"></i>
+      </span>
+      <i class="glyphicon glyphicon-edit"></i>
+      <span translate="aside.nav.components.form.FORM">Form</span>
+    </a>
+    <ul class="nav nav-sub dk">
+      <li class="nav-sub-header">
+        <a href>
+          <span translate="aside.nav.components.form.FORM">Form</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.form.elements">
+          <span translate="aside.nav.components.form.FORM_ELEMENTS">Form elements</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.form.validation">
+          <span translate="aside.nav.components.form.FORM_VALIDATION">Form validation</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.form.wizard">
+          <span translate="aside.nav.components.form.FORM_WIZARD">Form wizard</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.form.fileupload">
+          <span>File upload</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.form.imagecrop">
+          <span>Image crop</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.form.select">
+          <span>Select</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.form.slider">
+          <span>Slider</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.form.editor">
+          <span>Editor</span>
+        </a>
+      </li>
+    </ul>
+  </li> -->
+
+
+  
+ </ul>
+
+
+
+<!-- <ul class="nav"  ng-show="{{app.status == 'pendiente'}}" >
+  <li class="hidden-folded  padder m-t m-b-sm text-muted text-xs">
+    <span translate="aside.nav.HEADER">Menu</span>
+  </li>
+  <li ui-sref-active="active" ng-show="{{app.nivel == '1'}}">
+    <a ui-sref="app.dashboard-v1">
+
+       <i class="font-bold fa fa-dashboard icon"></i>
+      <span class="font-bold"  translate="aside.nav.DASHBOARD"
+      
+
+      >Dashboard</span>
+    </a>
+  </li>
+  <li ui-sref-active="active" ng-show="{{app.nivel == '1'}}">
+    <a ui-sref="app.clientes">
+
+       <i class="fa  fa-bank icon"></i>
+      <span class="font-bold"  translate="aside.nav.CLIENTES"
+      
+
+      >Clientes</span>
+    </a>
+  </li>
+  <li ui-sref-active="active" ng-show="{{app.nivel == '1'}}">
+    <a ui-sref="apps.consultores">
+
+       <i class="fa  fa-users icon"></i>
+      <span class="font-bold"  translate="aside.nav.CONSULTORES"
+      
+
+      >Consultores</span>
+    </a>
+  </li>
+ 
+  <li ng-class="{active:$state.includes('app.ui')}" ng-show="{{app.nivel == '1'}}">
+    <a href class="auto">
+      <span class="pull-right text-muted">
+        <i class="fa fa-fw fa-angle-right text"></i>
+        <i class="fa fa-fw fa-angle-down text-active"></i>
+      </span>
+      <i class="font-bold fa icon-layers icon"></i>
+      <span translate="aside.nav.SOLICITUDES">Solicitudes</span>
+    </a>
+    <ul class="nav nav-sub dk">
+        <li ui-sref-active="active">
+        <a ui-sref="apps.solicitudes">
+          <span translate="aside.nav.components.sol.SOLICITUDES">Solicitudes</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.listadoSolicitudes">
+          <span translate="aside.nav.components.sol.LISTADO">Listado</span>
+        </a>
+      </li>     
+    </ul>
+  </li>
+  <li ng-class="{active:$state.includes('app.ui')}" ng-show="{{app.nivel == '2'}}">
+    <a href class="auto">
+      <span class="pull-right text-muted">
+        <i class="fa fa-fw fa-angle-right text"></i>
+        <i class="fa fa-fw fa-angle-down text-active"></i>
+      </span>
+      <i class="font-bold fa icon-layers icon"></i>
+      <span translate="aside.nav.SOLICITUDESa">Solicitudes</span>
+    </a>
+    <ul class="nav nav-sub dk">
+        <li ui-sref-active="active">
+        <a ui-sref="app.nueva">
+          <span translate="aside.nav.components.sol.NUEVA">Nueva Solicitud</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="apps.todas">
+          <span translate="aside.nav.components.sol.TODAS">Todas</span>
+        </a>
+      </li>     
+    </ul>
+  </li>
+
+
+  <li ng-class="{active:$state.includes('app.ui')}">
+    <a href class="auto">
+      <span class="pull-right text-muted">
+        <i class="fa fa-fw fa-angle-right text"></i>
+        <i class="fa fa-fw fa-angle-down text-active"></i>
+      </span>
+      <i class="glyphicon glyphicon-briefcase icon"></i>
+      <span translate="aside.nav.components.ui_kits.UI_KITS">UI Kits</span>
+    </a>
+    <ul class="nav nav-sub dk">
+      <li class="nav-sub-header">
+        <a href>
+          <span translate="aside.nav.components.ui_kits.UI_KITS">UI Kits</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.ui.buttons">
+          <span translate="aside.nav.components.ui_kits.BUTTONS">Buttons</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.ui.icons">
+          <b class="badge bg-info pull-right">3</b>
+          <span translate="aside.nav.components.ui_kits.ICONS">Icons</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.ui.grid">
+          <span translate="aside.nav.components.ui_kits.GRID">Grid</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.ui.widgets">
+          <b class="badge bg-success pull-right">13</b>
+          <span translate="aside.nav.WIDGETS">Widgets</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.ui.bootstrap">
+          <b class="badge bg-primary pull-right">16</b>
+          <span translate="aside.nav.components.ui_kits.BOOTSTRAP">Bootstrap</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.ui.sortable">
+          <span translate="aside.nav.components.ui_kits.SORTABLE">Sortable</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.ui.portlet">
+          <span translate="aside.nav.components.ui_kits.PORTLET">Portlet</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.ui.timeline">
+          <span translate="aside.nav.components.ui_kits.TIMELINE">Timeline</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.ui.tree">
+          <span>Tree</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.ui.toaster">
+          <span>Toaster</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.ui.jvectormap">
+          <span translate="aside.nav.components.ui_kits.VECTOR_MAP">Vector Map</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.ui.googlemap">
+          <span>Google Map</span>
+        </a>
+      </li>
+    </ul>
+  </li>
+
+  <li ng-class="{active:$state.includes('app.form')}">
+    <a href class="auto">
+      <span class="pull-right text-muted">
+        <i class="fa fa-fw fa-angle-right text"></i>
+        <i class="fa fa-fw fa-angle-down text-active"></i>
+      </span>
+      <i class="glyphicon glyphicon-edit"></i>
+      <span translate="aside.nav.components.form.FORM">Form</span>
+    </a>
+    <ul class="nav nav-sub dk">
+      <li class="nav-sub-header">
+        <a href>
+          <span translate="aside.nav.components.form.FORM">Form</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.form.elements">
+          <span translate="aside.nav.components.form.FORM_ELEMENTS">Form elements</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.form.validation">
+          <span translate="aside.nav.components.form.FORM_VALIDATION">Form validation</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.form.wizard">
+          <span translate="aside.nav.components.form.FORM_WIZARD">Form wizard</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.form.fileupload">
+          <span>File upload</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.form.imagecrop">
+          <span>Image crop</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.form.select">
+          <span>Select</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.form.slider">
+          <span>Slider</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.form.editor">
+          <span>Editor</span>
+        </a>
+      </li>
+    </ul>
+  </li>
+ </ul> -->
+<!-- / list

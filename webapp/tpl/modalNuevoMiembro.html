@@ -1,0 +1,63 @@
+<div class="modal-header" ng-controller="SignupFormController">
+    <h3 class="modal-title" >+ {{item.tipo}}</h3>
+</div>
+
+<div class="panel-body">
+  <form  name="form" class="form-validation" ng-show="{{item.letra == 'a'}}">
+    <div class="form-group col-sm-12" >
+      <div ng-controller="AccordionDemoCtrl">
+      <div class="list-group list-group-sm">
+        <div class="list-group-item" >
+          <input type="text" placeholder="Nombres"  class="form-control no-border" ng-model="item.nombres" required>
+        </div>
+        <div class="list-group-item">
+          <input type="email" placeholder="Email" class="form-control no-border" ng-model="item.email" required>
+        </div>
+        
+
+
+            <div class="list-group-item">
+                  <input type="password" class="form-control " placeholder="Contraseña" ng-model="item.password" required >   
+            </div>
+              <div class="list-group-item">
+                  <input type="password" class="form-control " placeholder="Confirma la contraseña" required ng-model="item.password2" ui-validate=" '$value==item.password' " ui-validate-watch=" 'item.password' ">
+              </div>
+             
+                  <span ng-show='form.$error.validator'>las contraseñas deben ser identicas</span>
+            
+      </div>
+      </div>
+    </div>
+    </form>
+    <form  name="form" class="form-validation" ng-show="{{item.letra == 'c'}}">
+    <div class="form-group col-sm-12" >
+      <div ng-controller="AccordionDemoCtrl">
+      <div class="list-group list-group-sm">
+        <div class="list-group-item" >
+          <input type="text" placeholder="Nombre de la clinica o Consultorio"  class="form-control no-border" ng-model="item.nombres" required>
+        </div>
+        <div class="list-group-item">
+          <input type="email" placeholder="Email" class="form-control no-border" ng-model="item.email" required>
+        </div>
+        
+
+
+            <div class="list-group-item">
+                  <input type="password" class="form-control " placeholder="Contraseña" ng-model="item.password" required >   
+            </div>
+              <div class="list-group-item">
+                  <input type="password" class="form-control " placeholder="Confirma la contraseña" required ng-model="item.password2" ui-validate=" '$value==item.password' " ui-validate-watch=" 'item.password' ">
+              </div>
+             
+                  <span ng-show='form.$error.validator'>las contraseñas deben ser identicas</span>
+            
+      </div>
+      </div>
+    </div>
+    </form>
+</div>
+<div class="modal-footer">                  
+  <button class="btn btn-default" ng-click="cancel()">Cancelar</button>
+  <button class="btn btn-primary" ng-click="okNuevoMiembro(item)" ng-disabled='form.$invalid'>OK</button>
+</div>
+
