@@ -71,7 +71,7 @@ $scope.lateral = false;
     toaster.pop($scope.toaster.type3, $scope.toaster.title3, $scope.toaster.text3);
   };
   $scope.consultarSolicitudes= function(){
-       $http.get('http://localhost:1345/solicitud/?idUsuario='+MyService.data.idUsuario).then(function (resp) {   
+       $http.get('http://54.202.62.62:1345/solicitud/?idUsuario='+MyService.data.idUsuario).then(function (resp) {   
       $scope.solicitudes = resp.data.results;
       $scope.detallesSolicitud = null;
      $scope.lateral = true;
@@ -81,7 +81,7 @@ $scope.lateral = false;
 
 $scope.consultarEnProceso = function(){
   $scope.solicitudes=[];
-  $http.get('http://localhost:1345/solicitud/?idUsuario='+MyService.data.idUsuario).then(function (resp) {   
+  $http.get('http://54.202.62.62:1345/solicitud/?idUsuario='+MyService.data.idUsuario).then(function (resp) {   
       $scope.solicitudesPre = resp.data.results;
       $scope.detallesSolicitud = null;
       $scope.lateral = true;
@@ -97,7 +97,7 @@ $scope.consultarEnProceso = function(){
 $scope.consultarEnProceso();
 $scope.consultarPendientes = function(){
   $scope.solicitudes=[];
-  $http.get('http://localhost:1345/solicitud/?idUsuario='+MyService.data.idUsuario).then(function (resp) {   
+  $http.get('http://54.202.62.62:1345/solicitud/?idUsuario='+MyService.data.idUsuario).then(function (resp) {   
       $scope.solicitudesPre = resp.data.results;
       $scope.detallesSolicitud = null;
       $scope.lateral = false;   
@@ -113,7 +113,7 @@ $scope.consultarPendientes = function(){
 $scope.consultarPendientes();
 $scope.consultarFinalizadas = function(){
   $scope.solicitudes=[];
-  $http.get('http://localhost:1345/solicitud/?idUsuario='+MyService.data.idUsuario).then(function (resp) {   
+  $http.get('http://54.202.62.62:1345/solicitud/?idUsuario='+MyService.data.idUsuario).then(function (resp) {   
       $scope.solicitudesPre = resp.data.results;
       $scope.detallesSolicitud = null;
       $scope.lateral = true;
@@ -204,7 +204,7 @@ $scope.consultarFinalizadas = function(){
   };
 
   $scope.deleteSolicitud = function(item){
-    $http.delete('http://localhost:1345/solicitud/'+item.id , item)
+    $http.delete('http://54.202.62.62:1345/solicitud/'+item.id , item)
     $scope.solicitudes.splice($scope.solicitudes.indexOf(item), 1);
   };
 
@@ -212,13 +212,13 @@ $scope.consultarFinalizadas = function(){
   MyService.data.solicitud={};
 
   $scope.consultarMensajes=function(item){
-     $http.get('http://localhost:1345/mensaje/?idSolicitud='+item.id).then(function (resp) {
+     $http.get('http://54.202.62.62:1345/mensaje/?idSolicitud='+item.id).then(function (resp) {
       $scope.items = resp.data.results;
       // $scope.item = null;  
     });
   };
   $scope.consultarMensajesDeNuevo=function(item){
-     $http.get('http://localhost:1345/mensaje/?idSolicitud='+item).then(function (resp) {
+     $http.get('http://54.202.62.62:1345/mensaje/?idSolicitud='+item).then(function (resp) {
       $scope.items = resp.data.results;
       // $scope.item = null;  
     });
@@ -240,7 +240,7 @@ $scope.consultarFinalizadas = function(){
   };
   
   $scope.deleteItem = function(item){
-    $http.delete('http://localhost:1345/consultor/'+item.id , item)
+    $http.delete('http://54.202.62.62:1345/consultor/'+item.id , item)
     $scope.items.splice($scope.items.indexOf(item), 1);
     $scope.item = $filter('orderBy')($scope.items, 'nombres')[0];
     if($scope.item) $scope.item.selected = true;
@@ -258,10 +258,10 @@ $scope.consultarFinalizadas = function(){
     solicitud.selected=item.selected;
     solicitud.editing=item.editing;
     if (MyService.data.idenSolicitud){
-      $http.put('http://localhost:1345/solicitud/'+MyService.data.idenSolicitud, solicitud)
+      $http.put('http://54.202.62.62:1345/solicitud/'+MyService.data.idenSolicitud, solicitud)
     }
     else {
-      $http.post('http://localhost:1345/solicitud/', solicitud)
+      $http.post('http://54.202.62.62:1345/solicitud/', solicitud)
     }
     $scope.items = null;
     $scope.item = null;

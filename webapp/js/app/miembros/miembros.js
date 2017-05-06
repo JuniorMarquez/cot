@@ -95,7 +95,7 @@ $scope.miembros = [];
          
    // dtInstance.rerender(); 
       
-      $http.get('http://localhost:1345/miembro/').then(function (resp) {
+      $http.get('http://54.202.62.62:1345/miembro/').then(function (resp) {
         $scope.miembros = resp.data.results;
         var bandera="";
         var bandera2="";
@@ -218,7 +218,7 @@ $scope.openBorrar = function (iden,timeout) {
   var item=[];
   var dato="";
   var datosCuenta="";
-  $http.get('http://localhost:1345/miembro/'+iden).success(function(respuesta){        
+  $http.get('http://54.202.62.62:1345/miembro/'+iden).success(function(respuesta){        
     $scope.miembro = respuesta;
     $scope.item=respuesta;
     MyService.data.idenCliDel=respuesta.id;
@@ -287,7 +287,7 @@ setTimeout(function() {  var modalInstance = $modal.open({
   var miembroAct={"status":"actualizado"};
 
    $scope.popAprobacion();
-      $http.put('http://localhost:1345/miembro/'+MyService.data.idenMiembro, miembroAct)
+      $http.put('http://54.202.62.62:1345/miembro/'+MyService.data.idenMiembro, miembroAct)
    $scope.getMiembros2();
    setTimeout(function() {
     $state.go('app.dashboard-v1');

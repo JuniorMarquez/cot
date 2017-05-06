@@ -75,7 +75,7 @@ app.controller('ConsultoresCtrl', ['$scope', '$state','$http', '$filter', '$moda
   $scope.format = 'shortDate';
 
   $scope.carga = function (){
-    $http.get('http://localhost:1345/especialidad/').then(function (resp) {
+    $http.get('http://54.202.62.62:1345/especialidad/').then(function (resp) {
       $scope.especialidades = resp.data.results;
     });
   };
@@ -88,7 +88,7 @@ MyService.data.luz=null;
     $scope.especialidad = item;
     // $scope.especialidad.selected = true;
     $scope.filter = item.nombre;
-    $http.get('http://localhost:1345/consultor/').then(function (resp) {
+    $http.get('http://54.202.62.62:1345/consultor/').then(function (resp) {
       $scope.items = resp.data.results;
       // $scope.item = null;  
       // $scope.item.selected = true;
@@ -97,7 +97,7 @@ MyService.data.luz=null;
   };
 $scope.selectConsultor = function(item){  
 
-     $http.get('http://localhost:1345/consultor/').then(function (resp) {
+     $http.get('http://54.202.62.62:1345/consultor/').then(function (resp) {
       $scope.items = resp.data.results;
       // $scope.item = null;  
       // $scope.item.selected = true;
@@ -136,7 +136,7 @@ $scope.selectConsultor = function(item){
     }
 
     $scope.item.selected = true;
-    $http.get('http://localhost:1345/consultor/').then(function (resp) {
+    $http.get('http://54.202.62.62:1345/consultor/').then(function (resp) {
       $scope.consultores = resp.data.results;
     });
       
@@ -167,7 +167,7 @@ $scope.selectConsultor = function(item){
   // };
  
   
-  $http.get('http://localhost:1345/especialidad/').then(function (resp) {
+  $http.get('http://54.202.62.62:1345/especialidad/').then(function (resp) {
     $scope.especialidades = resp.data.results;
   });
 
@@ -220,15 +220,15 @@ $scope.selectConsultor = function(item){
     }
   };
   $scope.carga = function(){
-    $http.get('http://localhost:1345/especialidad/').then(function (resp) {
+    $http.get('http://54.202.62.62:1345/especialidad/').then(function (resp) {
       $scope.especialidades = resp.data.results;
     });
   };
-  // $http.get('http://localhost:1345/departamento/').then(function (resp) {
+  // $http.get('http://54.202.62.62:1345/departamento/').then(function (resp) {
   //     $scope.departamentos = resp.data.results;
   //   });
  $scope.cargaConsultores = function(){
-      $http.get('http://localhost:1345/consultor/').then(function (resp) {
+      $http.get('http://54.202.62.62:1345/consultor/').then(function (resp) {
         $scope.consultores = resp.data.results;
       });
     };
@@ -390,7 +390,7 @@ $scope.selectConsultor = function(item){
   };
 
   $scope.deleteEspecialidad = function(item){
-    $http.delete('http://localhost:1345/especialidad/'+item.id , item)
+    $http.delete('http://54.202.62.62:1345/especialidad/'+item.id , item)
     $scope.especialidades.splice($scope.especialidades.indexOf(item), 1);
   };
 
@@ -402,7 +402,7 @@ $scope.selectConsultor = function(item){
     $scope.especialidad = item;
     $scope.especialidad.selected = true;
     $scope.filter = item.nombre;
-    $http.get('http://localhost:1345/consultor/').then(function (resp) {
+    $http.get('http://54.202.62.62:1345/consultor/').then(function (resp) {
       $scope.items = resp.data.results;
       $scope.item = null;  
       // $scope.item.selected = true;
@@ -426,7 +426,7 @@ $scope.selectConsultor = function(item){
 
     $scope.item = item;
     $scope.item.selected = true;
-    $http.get('http://localhost:1345/consultor/?idEstablecimiento='+MyService.data.idEstablecimiento).then(function (resp) {
+    $http.get('http://54.202.62.62:1345/consultor/?idEstablecimiento='+MyService.data.idEstablecimiento).then(function (resp) {
       $scope.consultors = resp.data.results;
       });
      var pas = item.id;
@@ -440,14 +440,14 @@ $scope.selectConsultor = function(item){
   
 
   $scope.deleteItem = function(item){
-    $http.delete('http://localhost:1345/consultor/'+item.id , item)
+    $http.delete('http://54.202.62.62:1345/consultor/'+item.id , item)
     $scope.items.splice($scope.items.indexOf(item), 1);
     $scope.item = $filter('orderBy')($scope.items, 'nombres')[0];
     if($scope.item) $scope.item.selected = true;
   };
 
   $scope.deleteconsultor = function(consultor){
-    $http.delete('http://localhost:1345/consultor/'+consultor.id , consultor)
+    $http.delete('http://54.202.62.62:1345/consultor/'+consultor.id , consultor)
     $scope.consultoresFiltrados.splice($scope.consultores.indexOf(consultor), 1);
     $scope.consultor = $filter('orderBy')($scope.consultores, 'nombres')[0];
     if($scope.consultor) $scope.consultor.selected = true;
@@ -468,7 +468,7 @@ $scope.selectConsultor = function(item){
     $scope.item.mensajeNuevo=null;
     // $scope.item.idEstablecimiento = MyService.data.idEstablecimiento;
     $scope.item.idUsuario = MyService.data.idUsuario;
-    $http.get('http://localhost:1345/especialidad/').then(function (resp) {
+    $http.get('http://54.202.62.62:1345/especialidad/').then(function (resp) {
     $scope.especialidades = resp.data.results;
     }); 
   };
@@ -492,12 +492,12 @@ $scope.selectConsultor = function(item){
     especialidadAct.selected=item.selected;
     especialidadAct.editing=item.editing;
     if (MyService.data.idenEspecialidad){
-      $http.put('http://localhost:1345/especialidad/'+MyService.data.idenEspecialidad, especialidadAct)
+      $http.put('http://54.202.62.62:1345/especialidad/'+MyService.data.idenEspecialidad, especialidadAct)
     }
     else {
-      $http.post('http://localhost:1345/especialidad/', especialidadAct)
+      $http.post('http://54.202.62.62:1345/especialidad/', especialidadAct)
     }
-    // $http.get('http://localhost:1345/especialidad/?idEstablecimiento='+MyService.data.idEstablecimiento).then(function (resp) {
+    // $http.get('http://54.202.62.62:1345/especialidad/?idEstablecimiento='+MyService.data.idEstablecimiento).then(function (resp) {
     //   $scope.especialidades = resp.data.results;
     // });
     $scope.items = null;
@@ -529,16 +529,16 @@ $scope.selectConsultor = function(item){
    
     if (MyService.data.idenConsultor){
       $scope.pop4();
-      $http.put('http://localhost:1345/consultor/'+MyService.data.idenConsultor , consultorAct)
+      $http.put('http://54.202.62.62:1345/consultor/'+MyService.data.idenConsultor , consultorAct)
     }
     else {
       $scope.pop3();;
-      $http.post('http://localhost:1345/consultor/', consultorAct)
+      $http.post('http://54.202.62.62:1345/consultor/', consultorAct)
     }
-    $http.get('http://localhost:1345/especialidad/').then(function (resp) {
+    $http.get('http://54.202.62.62:1345/especialidad/').then(function (resp) {
       $scope.especialidades = resp.data.results;
     });
-    $http.get('http://localhost:1345/consultor/').then(function (resp) {
+    $http.get('http://54.202.62.62:1345/consultor/').then(function (resp) {
       $scope.app.states = resp.data.results;
     });
     // $scope.items = null;

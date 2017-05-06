@@ -43,7 +43,7 @@ var totalOdontologos=0;
  var totalClinicasConsultorios=0;
  var totalPendientes=0;
  var pendientes=0;
-    $http.get('http://localhost:1345/miembro').then(function (resp) {
+    $http.get('http://54.202.62.62:1345/miembro').then(function (resp) {
     $scope.miembros = resp.data.results;
  var numero = $scope.miembros.length;
  $scope.total= numero;
@@ -67,7 +67,7 @@ $scope.cargaInicial();
 $scope.guardar = function(item){
     $scope.pop();
     item.status='actualizado';
-    $http.put('http://localhost:1345/miembro/'+MyService.data.idUsuario, item)
+    $http.put('http://54.202.62.62:1345/miembro/'+MyService.data.idUsuario, item)
     $state.go('app.dashboard-v1');
 };
   $scope.today = function() {
@@ -183,7 +183,7 @@ $scope.guardar = function(item){
 $scope.totalConsultores=0;
     $scope.consultores=[];
     $scope.cargaConsultores = function(){
-      $http.get('http://localhost:1345/consultor/').then(function (resp) {
+      $http.get('http://54.202.62.62:1345/consultor/').then(function (resp) {
         $scope.consultores = resp.data.results;
         // for (var i=0;i<$scope.consultores.length;++i){
         //   if($scope.consultores[i].sexo=='Macho'){
@@ -198,7 +198,7 @@ $scope.totalConsultores=0;
   $scope.totalMiembros=0;
     $scope.consultores=[];
     $scope.cargaMiembros = function(){
-      $http.get('http://localhost:1345/miembro/').then(function (resp) {
+      $http.get('http://54.202.62.62:1345/miembro/').then(function (resp) {
         $scope.miembros = resp.data.results;
         // for (var i=0;i<$scope.consultores.length;++i){
         //   if($scope.consultores[i].sexo=='Macho'){

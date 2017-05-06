@@ -39,7 +39,7 @@ app.controller('SigninFormController', ['$scope', '$filter','$http', '$state', '
     usuarioAct.email=item.email;
     usuarioAct.password=item.password;
     $scope.app.nombre=item.nombre;
-    $http.put('http://localhost:1345/userCot/'+MyService.data.idUsuario , usuarioAct)
+    $http.put('http://54.202.62.62:1345/userCot/'+MyService.data.idUsuario , usuarioAct)
     MyService.data.datos=item;
     item.editing = false;
     $scope.pop();
@@ -47,7 +47,7 @@ app.controller('SigninFormController', ['$scope', '$filter','$http', '$state', '
 
   $scope.consultaUsers=function(){
     
-    $http.get('http://localhost:1345/userCot/' ).success(function(respuesta){
+    $http.get('http://54.202.62.62:1345/userCot/' ).success(function(respuesta){
     $scope.users = respuesta.results;    
     for (var i=0; i<$scope.users.length; i++) 
       {
@@ -59,7 +59,7 @@ app.controller('SigninFormController', ['$scope', '$filter','$http', '$state', '
   $scope.consultaMiembros=function(){
     // var existente="no";
     
-    $http.get('http://localhost:1345/miembro/' ).success(function(respuesta){
+    $http.get('http://54.202.62.62:1345/miembro/' ).success(function(respuesta){
       $scope.miembros = respuesta.results; 
       for (var i=0; i<$scope.miembros.length; i++) 
         {

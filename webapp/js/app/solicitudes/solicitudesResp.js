@@ -87,7 +87,7 @@ app.controller('listadoSolicitudesCtrl', ['$scope', '$http','$state', '$filter',
  MyService.data.contador=$scope.vigilante;
     $scope.getSolicitudes = function () {
       $scope.solicitudes=null;
-      $http.get('http://localhost:1345/solicitud/').then(function (resp) {
+      $http.get('http://54.202.62.62:1345/solicitud/').then(function (resp) {
         $scope.solicitudes = resp.data.results;
         var bandera="";
         var bandera2="";
@@ -151,7 +151,7 @@ app.controller('listadoSolicitudesCtrl', ['$scope', '$http','$state', '$filter',
 //   var item=[];
 //   var dato="";
 //   var datosCuenta="";
-//   $http.get('http://localhost:1345/solicitud/'+iden).success(function(respuesta){          
+//   $http.get('http://54.202.62.62:1345/solicitud/'+iden).success(function(respuesta){          
 //   $scope.solicitud = respuesta;
 //   $scope.item.fechaLiquidacion=respuesta.createdAt;
 //   $scope.item.numeroMeses=respuesta.numeroMeses;
@@ -209,7 +209,7 @@ app.controller('listadoSolicitudesCtrl', ['$scope', '$http','$state', '$filter',
 //   var item=[];
 //   var dato="";
 //   var datosCuenta="";
-//   $http.get('http://localhost:1345/solicitud/'+iden).success(function(respuesta){        
+//   $http.get('http://54.202.62.62:1345/solicitud/'+iden).success(function(respuesta){        
 //     $scope.solicitud = respuesta;
 //     $scope.item.fechaLiquidacion=respuesta.createdAt;
 //     $scope.item.numeroMeses=respuesta.numeroMeses;
@@ -269,7 +269,7 @@ app.controller('listadoSolicitudesCtrl', ['$scope', '$http','$state', '$filter',
     $scope.getSolicitudes2 = function () {
        $("#dataTable").dataTable().fnDestroy();
     $scope.solicitudesSegundo=null;
-    $http.get('http://localhost:1345/solicitud/').then(function (resp) {
+    $http.get('http://54.202.62.62:1345/solicitud/').then(function (resp) {
       $scope.solicitudesSegundo = resp.data.results;  
       var bandera="";
       var bandera2="";
@@ -348,9 +348,9 @@ app.controller('listadoSolicitudesCtrl', ['$scope', '$http','$state', '$filter',
 $scope.openDetalles = function(item,timeout){
   var nuevo={};
   nuevo.identif=item;
-  $http.put('http://localhost:1345/solicitud/'+item ,nuevo); 
+  $http.put('http://54.202.62.62:1345/solicitud/'+item ,nuevo); 
   setTimeout(function() {
-    $http.get('http://localhost:1345/solicitud/?identif=' +item).success(function(respuesta){
+    $http.get('http://54.202.62.62:1345/solicitud/?identif=' +item).success(function(respuesta){
     $scope.datos = respuesta.results[0];
     MyService.data.datosSolicitud=$scope.datos;
     MyService.data.contador=0;

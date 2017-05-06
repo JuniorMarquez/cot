@@ -15,11 +15,11 @@ app.controller('SignupFormController', ['$scope', '$filter','$http', '$state','M
     $scope.datos=[];
     $scope.establecimientos={};
     $scope.createEstablecimiento = function(user){
-       $http.post('http://localhost:1345/establecimiento/', {administrador: $scope.user.nombre, emailAdministrador: $scope.user.email});
+       $http.post('http://54.202.62.62:1345/establecimiento/', {administrador: $scope.user.nombre, emailAdministrador: $scope.user.email});
     };
 
     $scope.entrar = function(user) {
-      $http.get('http://localhost:1345/userbcsc/?email=' +$scope.user.email).success(function(respuesta){
+      $http.get('http://54.202.62.62:1345/userbcsc/?email=' +$scope.user.email).success(function(respuesta){
         $scope.datos = respuesta.results[0];
         MyService.data.datos=$scope.datos;
       });
@@ -111,7 +111,7 @@ MyService.letra="e";
   };
 
     $scope.okNuevoMiembro = function(user) {
-      $http.post('http://localhost:1345/miembro/', {
+      $http.post('http://54.202.62.62:1345/miembro/', {
         nombresC: $scope.user.nombre, 
         apellidosC:'',
         identificacionC:'',
