@@ -20,7 +20,7 @@
      "MIEMBROS" : "Miembros",
 "SOLICITUDES" : "Solicitudes de soporte",
  "SOLICITUDESa" : "Mis solicitudes",
-    "CALENDAR" : "Calendar",
+    "CALENDAR" : "Calendario",
     "EMAIL" : "Email",
     "DISCOS" : "Discos",
     "WIDGETS" : "Widgets",

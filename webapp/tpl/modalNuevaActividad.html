@@ -1,0 +1,28 @@
+<div class="modal-header">
+    <h3 class="modal-title">Agregar actividad</h3>
+</div>
+<div class="modal-body">
+    
+        <div class="form-group">
+            <div class="col-md-18">
+                <input placeholder="Titulo" type="text" class="form-control" 
+               ng-model="item.title">
+                <div class="col-xs-6">
+                    <p>Fecha.</p>
+                      <p class="input-group" ng-controller="DatepickerDemoCtrl">
+                      <input type="text" class="form-control" datepicker-popup="dd/MM/yyyy" ng-model="item.start" is-open="opened"  ng-change="getClientes2()" datepicker-options="dateOptions" ng-required="true"  close-text="Ok"/>
+                      <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                      </span>
+                    </p>
+                  </div>
+               <input placeholder="lugar" type="text" class="form-control" 
+               ng-model="item.location">
+             </div>  
+        </div>
+
+</div>
+<div class="modal-footer">                  
+    <button class="btn btn-default" ng-click="cancel()">Cancelar</button>
+    <button class="btn btn-primary" ng-click="okActividad(item)">OK</button>
+</div>

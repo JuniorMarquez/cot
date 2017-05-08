@@ -358,6 +358,13 @@ $scope.okEspecialidad = function (item) {
       $http.post('http://54.202.62.62:1345/especialidad/' ,item);       
       $modalInstance.close();
     };
+    $scope.okActividad = function (item) {
+
+      item.idUsuario=MyService.data.idUsuario;
+      $http.post('http://54.202.62.62:1345/evento/' ,item);       
+      $modalInstance.close();
+    };
+
     $scope.okAlimento = function (item) {
       item.idUsuario=MyService.data.idUsuario;
       $http.post('http://54.202.62.62:1345/alimento/' ,item);       

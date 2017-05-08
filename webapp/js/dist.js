@@ -43670,6 +43670,28 @@ angular.module('app')
                   url: '/lockme',
                   templateUrl: 'tpl/page_lockme.html'
               })
+              .state('calendario', {
+                  url: '/calendario',
+                  templateUrl: 'tpl/calendario.html',
+                  resolve: {
+                      deps: ['$ocLazyLoad', 'uiLoad',
+                        function( $ocLazyLoad, uiLoad ){
+                          return uiLoad.load(
+                            ['vendor/jquery/fullcalendar/fullcalendar.css',
+                              'vendor/jquery/fullcalendar/theme.css',
+                              'vendor/jquery/jquery-ui-1.10.3.custom.min.js',
+                              'vendor/libs/moment.min.js',
+                              'vendor/jquery/fullcalendar/fullcalendar.min.js',
+                              'js/app/calendar/calendar.js']
+                          ).then(
+                            function(){
+                              return $ocLazyLoad.load('ui.calendar');
+                            }
+                          )
+                      }]
+                  }
+              })
+
               .state('access', {
                   url: '/access',
                   template: '<div ui-view class="fade-in-right-big smooth"></div>'
@@ -43757,6 +43779,7 @@ angular.module('app')
                       }]
                   }
               })
+
 
               // mail
               .state('app.mail', {
@@ -45135,6 +45158,13 @@ $scope.okEspecialidad = function (item) {
       $http.post('http://54.202.62.62:1345/especialidad/' ,item);       
       $modalInstance.close();
     };
+    $scope.okActividad = function (item) {
+
+      item.idUsuario=MyService.data.idUsuario;
+      $http.post('http://54.202.62.62:1345/evento/' ,item);       
+      $modalInstance.close();
+    };
+
     $scope.okAlimento = function (item) {
       item.idUsuario=MyService.data.idUsuario;
       $http.post('http://54.202.62.62:1345/alimento/' ,item);       

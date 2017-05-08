@@ -7,7 +7,7 @@
   <li ui-sref-active="active" ng-show="{{app.nivel == '1'}}">
     <a ui-sref="app.dashboard-v1">
 
-       <i class="font-bold fa fa-dashboard icon"></i>
+       <i class="font-bold fa fa-dashboard icon "></i>
       <span class="font-bold"  translate="aside.nav.DASHBOARD"
       
 
@@ -17,11 +17,17 @@
   <li ui-sref-active="active" ng-show="{{app.nivel == '1'}}">
     <a ui-sref="app.miembros">
 
-       <i class="fa fa-users icon"></i>
+       <i class="fa fa-users icon text-success-dker"></i>
       <span class="font-bold"  translate="aside.nav.MIEMBROS"
       
 
       >Miembros</span>
+    </a>
+  </li>
+  <li ui-sref-active="active" ng-show="{{app.nivel == '1'}}">
+    <a ui-sref="app.calendar">
+      <i class="glyphicon glyphicon-calendar icon text-info-dker"></i>
+      <span class="font-bold" translate="aside.nav.CALENDAR">Calendario</span>
     </a>
   </li>
  <!--  <li ui-sref-active="active" ng-show="{{app.nivel == '1'}}">
